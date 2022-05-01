@@ -1,0 +1,54 @@
+/* Dark theme */
+body{
+    color: aliceblue;
+    background-color: rgb(228, 163, 163);
+}
+
+
+/* Custom page */
+
+header {
+    padding: 40px;
+    text-align: center;
+    background: #d44c4c;
+    color: black;
+    font-size: 30px;
+    margin: 1em;
+  }
+#container{
+    
+    margin-left: 36%;
+}
+
+input[type=text] {
+    width: 40px;
+    margin-left: 2.5em;
+}
+
+.box{
+    width: 0.8em;
+    height: 1em;
+    display: inline-block;
+}
+.gray{
+    background-color: gray;
+}
+.orange{
+    background-color: orange;
+}
+
+.green{
+    background-color: green;
+}
+
+.letter{
+    margin-left: 1.5em;
+    background-color: #d44c4c;
+    width: 60px;
+    display: inline-block;
+}
+
+button{
+    margin-top: 2em;
+    margin-left: 20%
+}
