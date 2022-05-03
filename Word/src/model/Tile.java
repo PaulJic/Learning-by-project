@@ -15,9 +15,9 @@ public class Tile {
 	public void setState(StatusEnum state) {
 		this.state = state;
 	}
-	public Tile(char text, String state) {
+	public Tile(char text, StatusEnum statusEnum) {
 		this.text = text;
-		this.state = StatusEnum.valueOf(state);
+		this.state = statusEnum;
 	}
 	
 }

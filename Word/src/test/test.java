@@ -20,9 +20,9 @@ public class test {
 			{
 				System.out.println("insert letter number: "+(j+1));
 				char c=sc.next().charAt(0);
-				System.out.println("insert its status(CORRECT,WRONG,PRESENT): ");
-				String e=sc.next();
-				t.add(new Tile(c, e.toUpperCase()));
+				System.out.println("insert its status(CORRECT(1),PRESENT(2),WRONG(3)): ");
+				int e=sc.nextInt();
+				t.add(new Tile(c,StatusEnum.valueOf(e)));
 			}
 			get.setTiles(t);
 			Advices ad=new Advices();

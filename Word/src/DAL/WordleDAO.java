@@ -37,6 +37,6 @@ public class WordleDAO {
 	}
 	
 	public void initQuery() {
-		this.query=query="select * from parole where word LIKE '%'";
+		this.query="select * from parole where word LIKE '%'";
 	}
 }

@@ -1,12 +1,10 @@
 package model;
 
 public enum StatusEnum {
-		CORRECT("1"),PRESENT("2"),WRONG("3");
+		CORRECT,PRESENT,WRONG;
 	
-		
-		private String number;
-		StatusEnum(String number) {
-			this.number=number;
+		public static StatusEnum valueOf(int e) {
+			return (e==1)?StatusEnum.CORRECT:(e==2)?StatusEnum.PRESENT:StatusEnum.WRONG;
 		}
 
 	
