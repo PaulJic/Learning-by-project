@@ -36,6 +36,7 @@ public class WordleREST {
 	@GetMapping("reset")
 	public void resetTentativi() {
 		WordServiceImpl.tentativi.clear();
+		WordServiceImpl.condizioni.clear();
 	}
 	
 }
