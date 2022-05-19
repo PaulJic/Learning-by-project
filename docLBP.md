@@ -1,6 +1,4 @@
 # BrIghT group
-======================================================================
-
 ### Componenti:
 - Paul Sebastian Jicmon (**_team leader_**)
 - Marika Crivellari
