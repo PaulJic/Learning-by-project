@@ -6,6 +6,7 @@
 - Simone Care'
 - Damira Dedekbayeva
 
+-------------------------------------------------------------------------------------------------------------------------------
 ### Descrizione progetto
 
 L'obiettivo è la realizzazione di un software per la risoluzione veloce di Wordle.
