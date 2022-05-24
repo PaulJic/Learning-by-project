@@ -8,7 +8,7 @@
 		<version>2.6.7</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.jic</groupId>
+	<groupId>com.bright</groupId>
 	<artifactId>wordle-spring</artifactId>
 	<version>0.0.1</version>
 	<name>wordle</name>
