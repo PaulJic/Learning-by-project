@@ -1,0 +1,11 @@
+body{
+    background-image: url("/img/background.jpg");
+}
+
+.btn-group-vertical{
+    float: left;
+    width: 30px;
+}
+input{
+    margin-left:  10px;
+}
