@@ -1,576 +1,619 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Wordle Solution</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wordle Solution</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
 </head>
-  <body>
-    <nav class="navbar navbar-dark bg-dark">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-            <img src="img/IconNav.PNG" alt="" width="30" height="24" class="d-inline-block align-text-top">
-            Bright
-          </a>
-        </div>
-      </nav>
 
-    <div class="container text-lg-center" >
-        <h1>Wordle Solution Ita</h1>
-        <p>Ti aiuteremo a risolvere Wordle insieme <br><a href="https://wordleitaliano.com/"  target="_blank">Wordle Italiano</a></p>
-            <div class="row">
-              <div class="col">
-                <table class="table-active ">
-                    <tbody>
-                      <tr>
-                        <!-- prima riga 5 celle -->
-                        <td>
-                            <div class="col-xs-1 " style="max-width: 50px;" >
-                                <input class="form-control"  type="text" maxlength="1" maxlength="1" id="letter1">
-                            </div>
-                        </td>
-                        
-                        <td>
-                            <div class="col-xs-1" style="max-width: 50px;" >
-                                <input class="form-control"  type="text" maxlength="1" id="letter2">
-                            </div>
-                        </td>
-                        <td>
-                            <div class="col-xs-1" style="max-width: 50px;" >
-                                <input class="form-control"  type="text" maxlength="1" id="letter3">
-                            </div>
-                        </td>
-                        <td>
-                            <div class="col-xs-1" style="max-width: 50px;" >
-                                <input class="form-control"  type="text" maxlength="1" id="letter4">
-                            </div>
-                        </td>
-                        <td>
-                            <div class="col-xs-1" style="max-width: 50px;" >
-                                <input class="form-control"  type="text" maxlength="1" id="letter5">
-                            </div>
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-success" onclick="firsWord()">Invio</button>
-                        </td>
-                      </tr>
-                      <td>
-                          <!-- primi 5 radio -->
-                        <div class="btn-group noborder">
-                            <input type="radio" class="btn-check" name="color1" id="1p1l" autocomplete="off" value="grigio" checked>
-                            <label class="btn btn-outline-secondary btn-sm" for="1p1l"></label>
-                          
-                            <input type="radio" class="btn-check" name="color1" id="2p1l" autocomplete="off" value="giallo">
-                            <label class="btn btn-outline-warning" for="2p1l"></label>
-                          
-                            <input type="radio" class="btn-check" name="color1" id="3p1l" autocomplete="off" value="verde">
-                            <label class="btn btn-outline-success" for="3p1l"></label>
-                          </div>
-                      </td>
-                      <td>
-                        <div class="btn-group noborder">
-                            <input type="radio" class="btn-check" name="color2" id="4p1l" autocomplete="off" value="grigio" checked>
-                            <label class="btn btn-outline-secondary btn-sm" for="4p1l"></label>
-                          
-                            <input type="radio" class="btn-check" name="color2" id="5p1l" autocomplete="off"  value="giallo">
-                            <label class="btn btn-outline-warning" for="5p1l"></label>
-                          
-                            <input type="radio" class="btn-check" name="color2" id="6p1l" autocomplete="off" value="verde">
-                            <label class="btn btn-outline-success" for="6p1l"></label>
-                          </div>
-                      </td>
-                      <td>
-                        <div class="btn-group noborder">
-                            <input type="radio" class="btn-check" name="color3" id="7p1l" autocomplete="off" value="grigio" checked>
-                            <label class="btn btn-outline-secondary btn-sm" for="7p1l"></label>
-                          
-                            <input type="radio" class="btn-check" name="color3" id="8p1l" autocomplete="off"  value="giallo">
-                            <label class="btn btn-outline-warning" for="8p1l"></label>
-                          
-                            <input type="radio" class="btn-check" name="color3" id="9p1l" autocomplete="off" value="verde">
-                            <label class="btn btn-outline-success" for="9p1l"></label>
-                          </div>
-                      </td>
-                      <td>
-                        <div class="btn-group noborder">
-                            <input type="radio" class="btn-check" name="color4" id="10p1l" autocomplete="off" value="grigio" checked>
-                            <label class="btn btn-outline-secondary btn-sm" for="10p1l"></label>
-                          
-                            <input type="radio" class="btn-check" name="color4" id="11p1l" autocomplete="off"  value="giallo">
-                            <label class="btn btn-outline-warning" for="11p1l"></label>
-                          
-                            <input type="radio" class="btn-check" name="color4" id="12p1l" autocomplete="off" value="verde">
-                            <label class="btn btn-outline-success" for="12p1l"></label>
-                          </div>
-                      </td>
-                      <td>
-                        <div class="btn-group noborder">
-                            <input type="radio" class="btn-check" name="color5" id="13p1l" autocomplete="off" value="grigio" checked>
-                            <label class="btn btn-outline-secondary btn-sm" for="13p1l"></label>
-                          
-                            <input type="radio" class="btn-check" name="color5" id="14p1l" autocomplete="off"  value="giallo">
-                            <label class="btn btn-outline-warning" for="14p1l"></label>
-                          
-                            <input type="radio" class="btn-check" name="color5" id="15p1l" autocomplete="off" value="verde">
-                            <label class="btn btn-outline-success" for="15p1l"></label>
-                          </div>
-                      </td>
-                    </tr>
-
-
-
-
-
-
-
-
-                    <!-- Seconda riga celle -->
-                    <tr>
-                        <td>
-                            <div class="col-xs-1" style="max-width: 50px;" >
-                                <input class="form-control"  type="text" maxlength="1" id="letter1-2">
-                            </div>
-                        </td>
-                        
-                        <td>
-                            <div class="col-xs-1" style="max-width: 50px;" >
-                                <input class="form-control"  type="text" maxlength="1" id="letter2-2">
-                            </div>
-                        </td>
-                        <td>
-                            <div class="col-xs-1" style="max-width: 50px;" >
-                                <input class="form-control"  type="text" maxlength="1" id="letter3-2">
-                            </div>
-                        </td>
-                        <td>
-                            <div class="col-xs-1" style="max-width: 50px;" >
-                                <input class="form-control"  type="text" maxlength="1" id="letter4-2">
-                            </div>
-                        </td>
-                        <td>
-                            <div class="col-xs-1" style="max-width: 50px;" >
-                                <input class="form-control"  type="text" maxlength="1" id="letter5-2">
-                            </div>
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-success" onclick="secondWord()">Invio</button>
-                        </td>
-                      </tr>
-                      <td>
-                        <!-- Seconda riga input radio -->
-                        <div class="btn-group noborder">
-                            <input type="radio" class="btn-check" name="color1-2" id="1p2l" autocomplete="off"  value="grigio" checked>
-                            <label class="btn btn-outline-secondary btn-sm" for="1p2l"></label>
-                          
-                            <input type="radio" class="btn-check" name="color1-2" id="2p2l" autocomplete="off" value="giallo" >
-                            <label class="btn btn-outline-warning" for="2p2l"></label>
-                          
-                            <input type="radio" class="btn-check" name="color1-2" id="3p2l" autocomplete="off" value="verde">
-                            <label class="btn btn-outline-success" for="3p2l"></label>
-                          </div>
-                      </td>
-                      <td>
-                        <div class="btn-group noborder">
-                            <input type="radio" class="btn-check" name="color2-2" id="4p2l" autocomplete="off"  value="grigio" checked>
-                            <label class="btn btn-outline-secondary btn-sm" for="4p2l"></label>
-                          
-                            <input type="radio" class="btn-check" name="color2-2" id="5p2l" autocomplete="off" value="giallo">
-                            <label class="btn btn-outline-warning" for="5p2l"></label>
-                          
-                            <input type="radio" class="btn-check" name="color2-2" id="6p2l" autocomplete="off" value="verde">
-                            <label class="btn btn-outline-success" for="6p2l"></label>
-                          </div>
-                      </td>
-                      <td>
-                        <div class="btn-group noborder">
-                            <input type="radio" class="btn-check" name="color3-2" id="7p2l" autocomplete="off"  value="grigio" checked>
-                            <label class="btn btn-outline-secondary btn-sm" for="7p2l"></label>
-                          
-                            <input type="radio" class="btn-check" name="color3-2" id="8p2l" autocomplete="off" value="giallo">
-                            <label class="btn btn-outline-warning" for="8p2l"></label>
-                          
-                            <input type="radio" class="btn-check" name="color3-2" id="9p2l" autocomplete="off" value="verde">
-                            <label class="btn btn-outline-success" for="9p2l"></label>
-                          </div>
-                      </td>
-                      <td>
-                        <div class="btn-group noborder">
-                            <input type="radio" class="btn-check" name="color4-2" id="10p2l" autocomplete="off"  value="grigio" checked>
-                            <label class="btn btn-outline-secondary btn-sm" for="10p2l"></label>
-                          
-                            <input type="radio" class="btn-check" name="color4-2" id="11p2l" autocomplete="off" value="giallo">
-                            <label class="btn btn-outline-warning" for="11p2l"></label>
-                          
-                            <input type="radio" class="btn-check" name="color4-2" id="12p2l" autocomplete="off" value="verde">
-                            <label class="btn btn-outline-success" for="12p2l"></label>
-                          </div>
-                      </td>
-                      <td>
-                        <div class="btn-group noborder">
-                            <input type="radio" class="btn-check" name="color5-2" id="13p2l" autocomplete="off"  value="grigio" checked>
-                            <label class="btn btn-outline-secondary btn-sm" for="13p2l"></label>
-                          
-                            <input type="radio" class="btn-check" name="color5-2" id="14p2l" autocomplete="off" value="giallo">
-                            <label class="btn btn-outline-warning" for="14p2l"></label>
-                          
-                            <input type="radio" class="btn-check" name="color5-2" id="15p2l" autocomplete="off" value="verde">
-                            <label class="btn btn-outline-success" for="15p2l"></label>
-                          </div>
-                      </td>
-                    </tr>
-
-
-
-                    <!-- Terza riga celle -->
-                        <td>
-                            <div class="col-xs-1 " style="max-width: 50px;" >
-                                <input class="form-control"  type="text" maxlength="1" id="letter1-3">
-                            </div>
-                        </td>
-                        
-                        <td>
-                            <div class="col-xs-1" style="max-width: 50px;" >
-                                <input class="form-control"  type="text"  maxlength="1" id="letter2-3">
-                            </div>
-                        </td>
-                        <td>
-                            <div class="col-xs-1" style="max-width: 50px;" >
-                                <input class="form-control"  type="text"  maxlength="1" id="letter3-3">
-                            </div>
-                        </td>
-                        <td>
-                            <div class="col-xs-1" style="max-width: 50px;" >
-                                <input class="form-control"  type="text"  maxlength="1" id="letter4-3">
-                            </div>
-                        </td>
-                        <td>
-                            <div class="col-xs-1" style="max-width: 50px;" >
-                                <input class="form-control"  type="text"  maxlength="1" id="letter5-3">
-                            </div>
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-success" onclick="thirdWord()">Invio</button>
-                        </td>
-                      </tr>
-                      <td>
-                          <!-- Terza riga input radio -->
-                        <div class="btn-group noborder">
-                            <input type="radio" class="btn-check" name="color1-3" id="1p3l" autocomplete="off"  value="grigio" checked>
-                            <label class="btn btn-outline-secondary btn-sm" for="1p3l"></label>
-                          
-                            <input type="radio" class="btn-check" name="color1-3" id="2p3l" autocomplete="off" value="giallo">
-                            <label class="btn btn-outline-warning" for="2p3l"></label>
-                          
-                            <input type="radio" class="btn-check" name="color1-3" id="3p3l" autocomplete="off" value="verde">
-                            <label class="btn btn-outline-success" for="3p3l"></label>
-                          </div>
-                      </td>
-                      <td>
-                        <div class="btn-group noborder">
-                            <input type="radio" class="btn-check" name="color2-3" id="4p3l" autocomplete="off"  value="grigio" checked>
-                            <label class="btn btn-outline-secondary btn-sm" for="4p3l"></label>
-                          
-                            <input type="radio" class="btn-check" name="color2-3" id="5p3l" autocomplete="off" value="giallo">
-                            <label class="btn btn-outline-warning" for="5p3l"></label>
-                          
-                            <input type="radio" class="btn-check" name="color2-3" id="6p3l" autocomplete="off" value="verde">
-                            <label class="btn btn-outline-success" for="6p3l"></label>
-                          </div>
-                      </td>
-                      <td>
-                        <div class="btn-group noborder">
-                            <input type="radio" class="btn-check" name="color3-3" id="7p3l" autocomplete="off"  value="grigio" checked>
-                            <label class="btn btn-outline-secondary btn-sm" for="7p3l"></label>
-                          
-                            <input type="radio" class="btn-check" name="color3-3" id="8p3l" autocomplete="off" value="giallo">
-                            <label class="btn btn-outline-warning" for="8p3l"></label>
-                          
-                            <input type="radio" class="btn-check" name="color3-3" id="9p3l" autocomplete="off" value="verde">
-                            <label class="btn btn-outline-success" for="9p3l"></label>
-                          </div>
-                      </td>
-                      <td>
-                        <div class="btn-group noborder">
-                            <input type="radio" class="btn-check" name="color4-3" id="10p3l" autocomplete="off"  value="grigio" checked>
-                            <label class="btn btn-outline-secondary btn-sm" for="10p3l"></label>
-                          
-                            <input type="radio" class="btn-check" name="color4-3" id="11p3l" autocomplete="off" value="giallo">
-                            <label class="btn btn-outline-warning" for="11p3l"></label>
-                          
-                            <input type="radio" class="btn-check" name="color4-3" id="12p3l" autocomplete="off" value="verde">
-                            <label class="btn btn-outline-success" for="12p3l"></label>
-                          </div>
-                      </td>
-                      <td>
-                        <div class="btn-group noborder">
-                            <input type="radio" class="btn-check" name="color5-3" id="13p3l" autocomplete="off"  value="grigio" checked>
-                            <label class="btn btn-outline-secondary btn-sm" for="13p3l"></label>
-                          
-                            <input type="radio" class="btn-check" name="color5-3" id="14p3l" autocomplete="off" value="giallo">
-                            <label class="btn btn-outline-warning" for="14p3l"></label>
-                          
-                            <input type="radio" class="btn-check" name="color5-3" id="15p3l" autocomplete="off" value="verde">
-                            <label class="btn btn-outline-success" for="15p3l"></label>
-                          </div>
-                      </td>
-                    </tr>
-
-
-
-                    <!-- Quarta riga celle -->
-                    <tr>
-                        <td>
-                            <div class="col-xs-1 " style="max-width: 50px;" >
-                                <input class="form-control"  type="text"  maxlength="1" id="letter1-4">
-                            </div>
-                        </td>
-                        
-                        <td>
-                            <div class="col-xs-1" style="max-width: 50px;" >
-                                <input class="form-control"  type="text"  maxlength="1" id="letter2-4">
-                            </div>
-                        </td>
-                        <td>
-                            <div class="col-xs-1" style="max-width: 50px;" >
-                                <input class="form-control"  type="text"  maxlength="1" id="letter3-4">
-                            </div>
-                        </td>
-                        <td>
-                            <div class="col-xs-1" style="max-width: 50px;" >
-                                <input class="form-control"  type="text"  maxlength="1" id="letter4-4">
-                            </div>
-                        </td>
-                        <td>
-                            <div class="col-xs-1" style="max-width: 50px;" >
-                                <input class="form-control"  type="text"  maxlength="1" id="letter5-4">
-                            </div>
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-success" onclick="fourthWord()">Invio</button>
-                        </td>
-                      </tr>
-                      <td>
-                          <!-- Quarta riga input radio -->
-                        <div class="btn-group noborder">
-                            <input type="radio" class="btn-check" name="color1-4" id="1p4l" autocomplete="off"  value="grigio" checked>
-                            <label class="btn btn-outline-secondary btn-sm" for="1p4l"></label>
-                          
-                            <input type="radio" class="btn-check" name="color1-4" id="2p4l" autocomplete="off" value="giallo">
-                            <label class="btn btn-outline-warning" for="2p4l"></label>
-                          
-                            <input type="radio" class="btn-check" name="color1-4" id="3p4l" autocomplete="off" value="verde">
-                            <label class="btn btn-outline-success" for="3p4l"></label>
-                          </div>
-                      </td>
-                      <td>
-                        <div class="btn-group noborder">
-                            <input type="radio" class="btn-check" name="color2-4" id="4p4l" autocomplete="off"  value="grigio" checked>
-                            <label class="btn btn-outline-secondary btn-sm" for="4p4l"></label>
-                          
-                            <input type="radio" class="btn-check" name="color2-4" id="5p4l" autocomplete="off" value="giallo">
-                            <label class="btn btn-outline-warning" for="5p4l"></label>
-                          
-                            <input type="radio" class="btn-check" name="color2-4" id="6p4l" autocomplete="off" value="verde">
-                            <label class="btn btn-outline-success" for="6p4l"></label>
-                          </div>
-                      </td>
-                      <td>
-                        <div class="btn-group noborder">
-                            <input type="radio" class="btn-check" name="color3-4" id="7p4l" autocomplete="off"  value="grigio" checked>
-                            <label class="btn btn-outline-secondary btn-sm" for="7p4l"></label>
-                          
-                            <input type="radio" class="btn-check" name="color3-4" id="8p4l" autocomplete="off" value="giallo">
-                            <label class="btn btn-outline-warning" for="8p4l"></label>
-                          
-                            <input type="radio" class="btn-check" name="color3-4" id="9p4l" autocomplete="off" value="verde">
-                            <label class="btn btn-outline-success" for="9p4l"></label>
-                          </div>
-                      </td>
-                      <td>
-                        <div class="btn-group noborder">
-                            <input type="radio" class="btn-check" name="color4-4" id="10p4l" autocomplete="off"  value="grigio" checked>
-                            <label class="btn btn-outline-secondary btn-sm" for="10p4l"></label>
-                          
-                            <input type="radio" class="btn-check" name="color4-4" id="11p4l" autocomplete="off" value="giallo">
-                            <label class="btn btn-outline-warning" for="11p4l"></label>
-                          
-                            <input type="radio" class="btn-check" name="color4-4" id="12p4l" autocomplete="off" value="verde">
-                            <label class="btn btn-outline-success" for="12p4l"></label>
-                          </div>
-                      </td>
-                      <td>
-                        <div class="btn-group noborder">
-                            <input type="radio" class="btn-check" name="color5-4" id="13p4l" autocomplete="off"  value="grigio" checked>
-                            <label class="btn btn-outline-secondary btn-sm" for="13p4l"></label>
-                          
-                            <input type="radio" class="btn-check" name="color5-4" id="14p4l" autocomplete="off" value="giallo">
-                            <label class="btn btn-outline-warning" for="14p4l"></label>
-                          
-                            <input type="radio" class="btn-check" name="color5-4" id="15p4l" autocomplete="off" value="verde">
-                            <label class="btn btn-outline-success" for="15p4l"></label>
-                          </div>
-                      </td>
-                    </tr>
-
-
-
-                    <!-- Quinta riga celle -->
-                    <tr>
-                        <td>
-                            <div class="col-xs-1 " style="max-width: 50px;" >
-                                <input class="form-control"  type="text"  maxlength="1" id="letter1-5">
-                            </div>
-                        </td>
-                        
-                        <td>
-                            <div class="col-xs-1" style="max-width: 50px;" >
-                                <input class="form-control"  type="text"  maxlength="1" id="letter2-5">
-                            </div>
-                        </td>
-                        <td>
-                            <div class="col-xs-1" style="max-width: 50px;" >
-                                <input class="form-control"  type="text"  maxlength="1" id="letter3-5">
-                            </div>
-                        </td>
-                        <td>
-                            <div class="col-xs-1" style="max-width: 50px;" >
-                                <input class="form-control"  type="text"  maxlength="1" id="letter4-5">
-                            </div>
-                        </td>
-                        <td>
-                            <div class="col-xs-1" style="max-width: 50px;" >
-                                <input class="form-control"  type="text"  maxlength="1" id="letter5-5">
-                            </div>
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-success" onclick="fifthWord()">Invio</button>
-                        </td>
-                      </tr>
-                      <td>
-                          <!-- Quinta riga input radio -->
-                        <div class="btn-group noborder">
-                            <input type="radio" class="btn-check" name="color1-5" id="1p5l" autocomplete="off"  value="grigio" checked>
-                            <label class="btn btn-outline-secondary btn-sm" for="1p5l"></label>
-                          
-                            <input type="radio" class="btn-check" name="color1-5" id="2p5l" autocomplete="off" value="giallo">
-                            <label class="btn btn-outline-warning" for="2p5l"></label>
-                          
-                            <input type="radio" class="btn-check" name="color1-5" id="3p5l" autocomplete="off" value="verde">
-                            <label class="btn btn-outline-success" for="3p5l"></label>
-                          </div>
-                      </td>
-                      <td>
-                        <div class="btn-group noborder">
-                            <input type="radio" class="btn-check" name="color2-5" id="4p5l" autocomplete="off"  value="grigio" checked>
-                            <label class="btn btn-outline-secondary btn-sm" for="4p5l"></label>
-                          
-                            <input type="radio" class="btn-check" name="color2-5" id="5p5l" autocomplete="off" value="giallo">
-                            <label class="btn btn-outline-warning" for="5p5l"></label>
-                          
-                            <input type="radio" class="btn-check" name="color2-5" id="6p5l" autocomplete="off" value="verde">
-                            <label class="btn btn-outline-success" for="6p5l"></label>
-                          </div>
-                      </td>
-                      <td>
-                        <div class="btn-group noborder">
-                            <input type="radio" class="btn-check" name="color3-5" id="7p5l" autocomplete="off"  value="grigio" checked>
-                            <label class="btn btn-outline-secondary btn-sm" for="7p5l"></label>
-                          
-                            <input type="radio" class="btn-check" name="color3-5" id="8p5l" autocomplete="off" value="giallo">
-                            <label class="btn btn-outline-warning" for="8p5l"></label>
-                          
-                            <input type="radio" class="btn-check" name="color3-5" id="9p5l" autocomplete="off" value="verde">
-                            <label class="btn btn-outline-success" for="9p5l"></label>
-                          </div>
-                      </td>
-                      <td>
-                        <div class="btn-group noborder">
-                            <input type="radio" class="btn-check" name="color4-5" id="10p5l" autocomplete="off"  value="grigio" checked>
-                            <label class="btn btn-outline-secondary btn-sm" for="10p5l"></label>
-                          
-                            <input type="radio" class="btn-check" name="color4-5" id="11p5l" autocomplete="off" value="giallo">
-                            <label class="btn btn-outline-warning" for="11p5l"></label>
-                          
-                            <input type="radio" class="btn-check" name="color4-5" id="12p5l" autocomplete="off" value="verde">
-                            <label class="btn btn-outline-success" for="12p5l"></label>
-                          </div>
-                      </td>
-                      <td>
-                        <div class="btn-group noborder">
-                            <input type="radio" class="btn-check" name="color5-5" id="13p5l" autocomplete="off"  value="grigio" checked>
-                            <label class="btn btn-outline-secondary btn-sm" for="13p5l"></label>
-                          
-                            <input type="radio" class="btn-check" name="color5-5" id="14p5l" autocomplete="off" value="giallo">
-                            <label class="btn btn-outline-warning" for="14p5l"></label>
-                          
-                            <input type="radio" class="btn-check" name="color5-5" id="15p5l" autocomplete="off" value="verde">
-                            <label class="btn btn-outline-success" for="15p5l"></label>
-                          </div>
-                      </td>
-                    </tr>
-                      
-                    </tbody>
-                  </table>
-                  
-                <button type="button" class="btn btn-danger" onclick="allReset()">Reset</button>
-                
-                
-              </div>
-              <div class="col">
-                <h1 id="inizio">Parole consigliate per iniziare</h1>
-                <p id="indizzi">
-                    amaro, aroma, aereo, reato, torto, 
-                    sotto, tatto, osare, torta, ratto, 
-                    onore, stato, rosso, sorso, aceto, 
-                    trono, atrio, sosta, costo, tanto, 
-                    corso, poeta, arena, opera, porto</p>
-              </div>
-            </div>
+<body>
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="img/IconNav.PNG" alt="" width="30" height="24" class="d-inline-block align-text-top">
+        Bright
+      </a>
     </div>
+  </nav>
 
-    
-    
-    <!-- fondo pagina descritivo -->
-<div id="fondoPagina">
+  <div class="container text-lg-center">
+    <h1>Wordle Solution Ita</h1>
+    <p>Ti aiuteremo a risolvere Wordle insieme <br><a href="https://wordleitaliano.com/" target="_blank">Wordle
+        Italiano</a></p>
+    <div class="row">
+      <div class="col">
+        <table class="table-active ">
+          <tbody>
+            <tr>
+              <!-- prima riga 5 celle -->
+              <td>
+                <div class="col-xs-1 " style="max-width: 50px;">
+                  <input class="form-control" type="text" maxlength="1" id="letter1">
+                </div>
+              </td>
 
-    <footer style="background-color: #deded5;">
-    <div class="container p-4">
-      <div class="row">
-        <div class="col-lg-6 col-md-12 mb-4">
-          <h5 class="mb-3" style="letter-spacing: 2px; color: #818963;">Informzaioni</h5>
-          <p>
-            Descrizione prodotto
-          </p>
-        </div>
-        <div class="col-lg-3 col-md-6 mb-4">
-          <h5 class="mb-3" style="letter-spacing: 2px; color: #818963;">Guida</h5>
-          <ul class="list-unstyled mb-0">
-            <li class="mb-1">
-                <a href="Guida.pdf" target="_blank" class="btn btn-primary">Apri per vedere le istruzioni</a>
-            </li>
-          </ul>
-        </div>
-        <div class="col-lg-3 col-md-6 mb-4">
-        
-         
-        </div>
+              <td>
+                <div class="col-xs-1" style="max-width: 50px;">
+                  <input class="form-control" type="text" maxlength="1" id="letter2">
+                </div>
+              </td>
+              <td>
+                <div class="col-xs-1" style="max-width: 50px;">
+                  <input class="form-control" type="text" maxlength="1" id="letter3">
+                </div>
+              </td>
+              <td>
+                <div class="col-xs-1" style="max-width: 50px;">
+                  <input class="form-control" type="text" maxlength="1" id="letter4">
+                </div>
+              </td>
+              <td>
+                <div class="col-xs-1" style="max-width: 50px;">
+                  <input class="form-control" type="text" maxlength="1" id="letter5">
+                </div>
+              </td>
+              <td>
+                <div class="col-xs-1">
+                  <button type="button" class="btn btn-success" onclick="firsWord()">Invio</button>
+                </div>
+              </td>
+            </tr>
+            <td>
+              <!-- primi 5 radio -->
+              <div class="btn-group noborder">
+                <input type="radio" class="btn-check" name="color1" id="1p1l" autocomplete="off" value="grigio" checked>
+                <label class="btn btn-outline-secondary" for="1p1l"></label>
+
+                <input type="radio" class="btn-check" name="color1" id="2p1l" autocomplete="off" value="giallo">
+                <label class="btn btn-outline-warning" for="2p1l"></label>
+
+                <input type="radio" class="btn-check" name="color1" id="3p1l" autocomplete="off" value="verde">
+                <label class="btn btn-outline-success" for="3p1l"></label>
+              </div>
+            </td>
+            <td>
+              <div class="btn-group noborder">
+                <input type="radio" class="btn-check" name="color2" id="4p1l" autocomplete="off" value="grigio" checked>
+                <label class="btn btn-outline-secondary" for="4p1l"></label>
+
+                <input type="radio" class="btn-check" name="color2" id="5p1l" autocomplete="off" value="giallo">
+                <label class="btn btn-outline-warning" for="5p1l"></label>
+
+                <input type="radio" class="btn-check" name="color2" id="6p1l" autocomplete="off" value="verde">
+                <label class="btn btn-outline-success" for="6p1l"></label>
+              </div>
+            </td>
+            <td>
+              <div class="btn-group noborder">
+                <input type="radio" class="btn-check" name="color3" id="7p1l" autocomplete="off" value="grigio" checked>
+                <label class="btn btn-outline-secondary" for="7p1l"></label>
+
+                <input type="radio" class="btn-check" name="color3" id="8p1l" autocomplete="off" value="giallo">
+                <label class="btn btn-outline-warning" for="8p1l"></label>
+
+                <input type="radio" class="btn-check" name="color3" id="9p1l" autocomplete="off" value="verde">
+                <label class="btn btn-outline-success" for="9p1l"></label>
+              </div>
+            </td>
+            <td>
+              <div class="btn-group noborder">
+                <input type="radio" class="btn-check" name="color4" id="10p1l" autocomplete="off" value="grigio"
+                  checked>
+                <label class="btn btn-outline-secondary" for="10p1l"></label>
+
+                <input type="radio" class="btn-check" name="color4" id="11p1l" autocomplete="off" value="giallo">
+                <label class="btn btn-outline-warning" for="11p1l"></label>
+
+                <input type="radio" class="btn-check" name="color4" id="12p1l" autocomplete="off" value="verde">
+                <label class="btn btn-outline-success" for="12p1l"></label>
+              </div>
+            </td>
+            <td>
+              <div class="btn-group noborder">
+                <input type="radio" class="btn-check" name="color5" id="13p1l" autocomplete="off" value="grigio"
+                  checked>
+                <label class="btn btn-outline-secondary" for="13p1l"></label>
+
+                <input type="radio" class="btn-check" name="color5" id="14p1l" autocomplete="off" value="giallo">
+                <label class="btn btn-outline-warning" for="14p1l"></label>
+
+                <input type="radio" class="btn-check" name="color5" id="15p1l" autocomplete="off" value="verde">
+                <label class="btn btn-outline-success" for="15p1l"></label>
+              </div>
+            </td>
+            </tr>
+
+
+
+
+
+
+
+
+            <!-- Seconda riga celle -->
+            <tr>
+              <td>
+                <div class="col-xs-1" style="max-width: 50px;">
+                  <input class="form-control" type="text" maxlength="1" id="letter1-2">
+                </div>
+              </td>
+
+              <td>
+                <div class="col-xs-1" style="max-width: 50px;">
+                  <input class="form-control" type="text" maxlength="1" id="letter2-2">
+                </div>
+              </td>
+              <td>
+                <div class="col-xs-1" style="max-width: 50px;">
+                  <input class="form-control" type="text" maxlength="1" id="letter3-2">
+                </div>
+              </td>
+              <td>
+                <div class="col-xs-1" style="max-width: 50px;">
+                  <input class="form-control" type="text" maxlength="1" id="letter4-2">
+                </div>
+              </td>
+              <td>
+                <div class="col-xs-1" style="max-width: 50px;">
+                  <input class="form-control" type="text" maxlength="1" id="letter5-2">
+                </div>
+              </td>
+              <td>
+                <div class="col-xs-1">
+                  <button type="button" class="btn btn-success" onclick="secondWord()">Invio</button>
+                </div>
+              </td>
+            </tr>
+            <td>
+              <!-- Seconda riga input radio -->
+              <div class="btn-group noborder">
+                <input type="radio" class="btn-check" name="color1-2" id="1p2l" autocomplete="off" value="grigio"
+                  checked>
+                <label class="btn btn-outline-secondary" for="1p2l"></label>
+
+                <input type="radio" class="btn-check" name="color1-2" id="2p2l" autocomplete="off" value="giallo">
+                <label class="btn btn-outline-warning" for="2p2l"></label>
+
+                <input type="radio" class="btn-check" name="color1-2" id="3p2l" autocomplete="off" value="verde">
+                <label class="btn btn-outline-success" for="3p2l"></label>
+              </div>
+            </td>
+            <td>
+              <div class="btn-group noborder">
+                <input type="radio" class="btn-check" name="color2-2" id="4p2l" autocomplete="off" value="grigio"
+                  checked>
+                <label class="btn btn-outline-secondary" for="4p2l"></label>
+
+                <input type="radio" class="btn-check" name="color2-2" id="5p2l" autocomplete="off" value="giallo">
+                <label class="btn btn-outline-warning" for="5p2l"></label>
+
+                <input type="radio" class="btn-check" name="color2-2" id="6p2l" autocomplete="off" value="verde">
+                <label class="btn btn-outline-success" for="6p2l"></label>
+              </div>
+            </td>
+            <td>
+              <div class="btn-group noborder">
+                <input type="radio" class="btn-check" name="color3-2" id="7p2l" autocomplete="off" value="grigio"
+                  checked>
+                <label class="btn btn-outline-secondary" for="7p2l"></label>
+
+                <input type="radio" class="btn-check" name="color3-2" id="8p2l" autocomplete="off" value="giallo">
+                <label class="btn btn-outline-warning" for="8p2l"></label>
+
+                <input type="radio" class="btn-check" name="color3-2" id="9p2l" autocomplete="off" value="verde">
+                <label class="btn btn-outline-success" for="9p2l"></label>
+              </div>
+            </td>
+            <td>
+              <div class="btn-group noborder">
+                <input type="radio" class="btn-check" name="color4-2" id="10p2l" autocomplete="off" value="grigio"
+                  checked>
+                <label class="btn btn-outline-secondary" for="10p2l"></label>
+
+                <input type="radio" class="btn-check" name="color4-2" id="11p2l" autocomplete="off" value="giallo">
+                <label class="btn btn-outline-warning" for="11p2l"></label>
+
+                <input type="radio" class="btn-check" name="color4-2" id="12p2l" autocomplete="off" value="verde">
+                <label class="btn btn-outline-success" for="12p2l"></label>
+              </div>
+            </td>
+            <td>
+              <div class="btn-group noborder">
+                <input type="radio" class="btn-check" name="color5-2" id="13p2l" autocomplete="off" value="grigio"
+                  checked>
+                <label class="btn btn-outline-secondary" for="13p2l"></label>
+
+                <input type="radio" class="btn-check" name="color5-2" id="14p2l" autocomplete="off" value="giallo">
+                <label class="btn btn-outline-warning" for="14p2l"></label>
+
+                <input type="radio" class="btn-check" name="color5-2" id="15p2l" autocomplete="off" value="verde">
+                <label class="btn btn-outline-success" for="15p2l"></label>
+              </div>
+            </td>
+            </tr>
+
+
+
+            <!-- Terza riga celle -->
+            <tr>
+              <td>
+                <div class="col-xs-1 " style="max-width: 50px;">
+                  <input class="form-control" type="text" maxlength="1" id="letter1-3">
+                </div>
+              </td>
+
+              <td>
+                <div class="col-xs-1" style="max-width: 50px;">
+                  <input class="form-control" type="text" maxlength="1" id="letter2-3">
+                </div>
+              </td>
+              <td>
+                <div class="col-xs-1" style="max-width: 50px;">
+                  <input class="form-control" type="text" maxlength="1" id="letter3-3">
+                </div>
+              </td>
+              <td>
+                <div class="col-xs-1" style="max-width: 50px;">
+                  <input class="form-control" type="text" maxlength="1" id="letter4-3">
+                </div>
+              </td>
+              <td>
+                <div class="col-xs-1" style="max-width: 50px;">
+                  <input class="form-control" type="text" maxlength="1" id="letter5-3">
+                </div>
+              </td>
+              <td>
+                <div class="col-xs-1">
+                  <button type="button" class="btn btn-success" onclick="thirdWord()">Invio</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <!-- Terza riga input radio -->
+                <div class="btn-group noborder">
+                  <input type="radio" class="btn-check" name="color1-3" id="1p3l" autocomplete="off" value="grigio"
+                    checked>
+                  <label class="btn btn-outline-secondary" for="1p3l"></label>
+
+                  <input type="radio" class="btn-check" name="color1-3" id="2p3l" autocomplete="off" value="giallo">
+                  <label class="btn btn-outline-warning" for="2p3l"></label>
+
+                  <input type="radio" class="btn-check" name="color1-3" id="3p3l" autocomplete="off" value="verde">
+                  <label class="btn btn-outline-success" for="3p3l"></label>
+                </div>
+              </td>
+              <td>
+                <div class="btn-group noborder">
+                  <input type="radio" class="btn-check" name="color2-3" id="4p3l" autocomplete="off" value="grigio"
+                    checked>
+                  <label class="btn btn-outline-secondary" for="4p3l"></label>
+
+                  <input type="radio" class="btn-check" name="color2-3" id="5p3l" autocomplete="off" value="giallo">
+                  <label class="btn btn-outline-warning" for="5p3l"></label>
+
+                  <input type="radio" class="btn-check" name="color2-3" id="6p3l" autocomplete="off" value="verde">
+                  <label class="btn btn-outline-success" for="6p3l"></label>
+                </div>
+              </td>
+              <td>
+                <div class="btn-group noborder">
+                  <input type="radio" class="btn-check" name="color3-3" id="7p3l" autocomplete="off" value="grigio"
+                    checked>
+                  <label class="btn btn-outline-secondary" for="7p3l"></label>
+
+                  <input type="radio" class="btn-check" name="color3-3" id="8p3l" autocomplete="off" value="giallo">
+                  <label class="btn btn-outline-warning" for="8p3l"></label>
+
+                  <input type="radio" class="btn-check" name="color3-3" id="9p3l" autocomplete="off" value="verde">
+                  <label class="btn btn-outline-success" for="9p3l"></label>
+                </div>
+              </td>
+              <td>
+                <div class="btn-group noborder">
+                  <input type="radio" class="btn-check" name="color4-3" id="10p3l" autocomplete="off" value="grigio"
+                    checked>
+                  <label class="btn btn-outline-secondary" for="10p3l"></label>
+
+                  <input type="radio" class="btn-check" name="color4-3" id="11p3l" autocomplete="off" value="giallo">
+                  <label class="btn btn-outline-warning" for="11p3l"></label>
+
+                  <input type="radio" class="btn-check" name="color4-3" id="12p3l" autocomplete="off" value="verde">
+                  <label class="btn btn-outline-success" for="12p3l"></label>
+                </div>
+              </td>
+              <td>
+                <div class="btn-group noborder">
+                  <input type="radio" class="btn-check" name="color5-3" id="13p3l" autocomplete="off" value="grigio"
+                    checked>
+                  <label class="btn btn-outline-secondary" for="13p3l"></label>
+
+                  <input type="radio" class="btn-check" name="color5-3" id="14p3l" autocomplete="off" value="giallo">
+                  <label class="btn btn-outline-warning" for="14p3l"></label>
+
+                  <input type="radio" class="btn-check" name="color5-3" id="15p3l" autocomplete="off" value="verde">
+                  <label class="btn btn-outline-success" for="15p3l"></label>
+                </div>
+              </td>
+            </tr>
+
+
+
+            <!-- Quarta riga celle -->
+            <tr>
+              <td>
+                <div class="col-xs-1 " style="max-width: 50px;">
+                  <input class="form-control" type="text" maxlength="1" id="letter1-4">
+                </div>
+              </td>
+
+              <td>
+                <div class="col-xs-1" style="max-width: 50px;">
+                  <input class="form-control" type="text" maxlength="1" id="letter2-4">
+                </div>
+              </td>
+              <td>
+                <div class="col-xs-1" style="max-width: 50px;">
+                  <input class="form-control" type="text" maxlength="1" id="letter3-4">
+                </div>
+              </td>
+              <td>
+                <div class="col-xs-1" style="max-width: 50px;">
+                  <input class="form-control" type="text" maxlength="1" id="letter4-4">
+                </div>
+              </td>
+              <td>
+                <div class="col-xs-1" style="max-width: 50px;">
+                  <input class="form-control" type="text" maxlength="1" id="letter5-4">
+                </div>
+              </td>
+              <td>
+                <div class="col-xs-1">
+                  <button type="button" class="btn btn-success" onclick="fourthWord()">Invio</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <!-- Quarta riga input radio -->
+                <div class="btn-group noborder">
+                  <input type="radio" class="btn-check" name="color1-4" id="1p4l" autocomplete="off" value="grigio"
+                    checked>
+                  <label class="btn btn-outline-secondary" for="1p4l"></label>
+
+                  <input type="radio" class="btn-check" name="color1-4" id="2p4l" autocomplete="off" value="giallo">
+                  <label class="btn btn-outline-warning" for="2p4l"></label>
+
+                  <input type="radio" class="btn-check" name="color1-4" id="3p4l" autocomplete="off" value="verde">
+                  <label class="btn btn-outline-success" for="3p4l"></label>
+                </div>
+              </td>
+              <td>
+                <div class="btn-group noborder">
+                  <input type="radio" class="btn-check" name="color2-4" id="4p4l" autocomplete="off" value="grigio"
+                    checked>
+                  <label class="btn btn-outline-secondary" for="4p4l"></label>
+
+                  <input type="radio" class="btn-check" name="color2-4" id="5p4l" autocomplete="off" value="giallo">
+                  <label class="btn btn-outline-warning" for="5p4l"></label>
+
+                  <input type="radio" class="btn-check" name="color2-4" id="6p4l" autocomplete="off" value="verde">
+                  <label class="btn btn-outline-success" for="6p4l"></label>
+                </div>
+              </td>
+              <td>
+                <div class="btn-group noborder">
+                  <input type="radio" class="btn-check" name="color3-4" id="7p4l" autocomplete="off" value="grigio"
+                    checked>
+                  <label class="btn btn-outline-secondary" for="7p4l"></label>
+
+                  <input type="radio" class="btn-check" name="color3-4" id="8p4l" autocomplete="off" value="giallo">
+                  <label class="btn btn-outline-warning" for="8p4l"></label>
+
+                  <input type="radio" class="btn-check" name="color3-4" id="9p4l" autocomplete="off" value="verde">
+                  <label class="btn btn-outline-success" for="9p4l"></label>
+                </div>
+              </td>
+              <td>
+                <div class="btn-group noborder">
+                  <input type="radio" class="btn-check" name="color4-4" id="10p4l" autocomplete="off" value="grigio"
+                    checked>
+                  <label class="btn btn-outline-secondary" for="10p4l"></label>
+
+                  <input type="radio" class="btn-check" name="color4-4" id="11p4l" autocomplete="off" value="giallo">
+                  <label class="btn btn-outline-warning" for="11p4l"></label>
+
+                  <input type="radio" class="btn-check" name="color4-4" id="12p4l" autocomplete="off" value="verde">
+                  <label class="btn btn-outline-success" for="12p4l"></label>
+                </div>
+              </td>
+              <td>
+                <div class="btn-group noborder">
+                  <input type="radio" class="btn-check" name="color5-4" id="13p4l" autocomplete="off" value="grigio"
+                    checked>
+                  <label class="btn btn-outline-secondary" for="13p4l"></label>
+
+                  <input type="radio" class="btn-check" name="color5-4" id="14p4l" autocomplete="off" value="giallo">
+                  <label class="btn btn-outline-warning" for="14p4l"></label>
+
+                  <input type="radio" class="btn-check" name="color5-4" id="15p4l" autocomplete="off" value="verde">
+                  <label class="btn btn-outline-success" for="15p4l"></label>
+                </div>
+              </td>
+            </tr>
+
+
+
+            <!-- Quinta riga celle -->
+            <tr>
+              <td>
+                <div class="col-xs-1 " style="max-width: 50px;">
+                  <input class="form-control" type="text" maxlength="1" id="letter1-5">
+                </div>
+              </td>
+
+              <td>
+                <div class="col-xs-1" style="max-width: 50px;">
+                  <input class="form-control" type="text" maxlength="1" id="letter2-5">
+                </div>
+              </td>
+              <td>
+                <div class="col-xs-1" style="max-width: 50px;">
+                  <input class="form-control" type="text" maxlength="1" id="letter3-5">
+                </div>
+              </td>
+              <td>
+                <div class="col-xs-1" style="max-width: 50px;">
+                  <input class="form-control" type="text" maxlength="1" id="letter4-5">
+                </div>
+              </td>
+              <td>
+                <div class="col-xs-1" style="max-width: 50px;">
+                  <input class="form-control" type="text" maxlength="1" id="letter5-5">
+                </div>
+              </td>
+              <td>
+                <div class="col-xs-1">
+                  <button type="button" class="btn btn-success" onclick="fifthWord()">Invio</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <!-- Quinta riga input radio -->
+                <div class="btn-group noborder">
+                  <input type="radio" class="btn-check" name="color1-5" id="1p5l" autocomplete="off" value="grigio"
+                    checked>
+                  <label class="btn btn-outline-secondary" for="1p5l"></label>
+
+                  <input type="radio" class="btn-check" name="color1-5" id="2p5l" autocomplete="off" value="giallo">
+                  <label class="btn btn-outline-warning" for="2p5l"></label>
+
+                  <input type="radio" class="btn-check" name="color1-5" id="3p5l" autocomplete="off" value="verde">
+                  <label class="btn btn-outline-success" for="3p5l"></label>
+                </div>
+              </td>
+              <td>
+                <div class="btn-group noborder">
+                  <input type="radio" class="btn-check" name="color2-5" id="4p5l" autocomplete="off" value="grigio"
+                    checked>
+                  <label class="btn btn-outline-secondary" for="4p5l"></label>
+
+                  <input type="radio" class="btn-check" name="color2-5" id="5p5l" autocomplete="off" value="giallo">
+                  <label class="btn btn-outline-warning" for="5p5l"></label>
+
+                  <input type="radio" class="btn-check" name="color2-5" id="6p5l" autocomplete="off" value="verde">
+                  <label class="btn btn-outline-success" for="6p5l"></label>
+                </div>
+              </td>
+              <td>
+                <div class="btn-group noborder">
+                  <input type="radio" class="btn-check" name="color3-5" id="7p5l" autocomplete="off" value="grigio"
+                    checked>
+                  <label class="btn btn-outline-secondary" for="7p5l"></label>
+
+                  <input type="radio" class="btn-check" name="color3-5" id="8p5l" autocomplete="off" value="giallo">
+                  <label class="btn btn-outline-warning" for="8p5l"></label>
+
+                  <input type="radio" class="btn-check" name="color3-5" id="9p5l" autocomplete="off" value="verde">
+                  <label class="btn btn-outline-success" for="9p5l"></label>
+                </div>
+              </td>
+              <td>
+                <div class="btn-group noborder">
+                  <input type="radio" class="btn-check" name="color4-5" id="10p5l" autocomplete="off" value="grigio"
+                    checked>
+                  <label class="btn btn-outline-secondary" for="10p5l"></label>
+
+                  <input type="radio" class="btn-check" name="color4-5" id="11p5l" autocomplete="off" value="giallo">
+                  <label class="btn btn-outline-warning" for="11p5l"></label>
+
+                  <input type="radio" class="btn-check" name="color4-5" id="12p5l" autocomplete="off" value="verde">
+                  <label class="btn btn-outline-success" for="12p5l"></label>
+                </div>
+              </td>
+              <td>
+                <div class="btn-group noborder">
+                  <input type="radio" class="btn-check" name="color5-5" id="13p5l" autocomplete="off" value="grigio"
+                    checked>
+                  <label class="btn btn-outline-secondary" for="13p5l"></label>
+
+                  <input type="radio" class="btn-check" name="color5-5" id="14p5l" autocomplete="off" value="giallo">
+                  <label class="btn btn-outline-warning" for="14p5l"></label>
+
+                  <input type="radio" class="btn-check" name="color5-5" id="15p5l" autocomplete="off" value="verde">
+                  <label class="btn btn-outline-success" for="15p5l"></label>
+                </div>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+
+        <button type="button" class="btn btn-danger" onclick="allReset()">Reset</button>
+
+
+      </div>
+      <div class="col">
+        <h1 id="inizio">Parole consigliate per iniziare</h1>
+        <p id="indizzi">
+          amaro, aroma, aereo, reato, torto,
+          sotto, tatto, osare, torta, ratto,
+          onore, stato, rosso, sorso, aceto,
+          trono, atrio, sosta, costo, tanto,
+          corso, poeta, arena, opera, porto</p>
       </div>
     </div>
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-      © 2022 Copyright:
-      <a class="text-dark" href="https://mdbootstrap.com/">Bright.com</a>
-    </div>
-    <!-- Copyright -->
-  </footer>
-  
-</div>
-<!-- End of .container -->
+  </div>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-    <script src="/js/main.js"></script>
-    <link href="/css/styles.css" rel="stylesheet">  
+
+  <!-- fondo pagina descritivo -->
+  <div id="fondoPagina">
+
+    <footer style="background-color: #deded5;">
+      <div class="container p-4">
+        <div class="row">
+          <div class="col-lg-6 col-md-12 mb-4">
+            <h5 class="mb-3" style="letter-spacing: 2px; color: #818963;">Informazioni</h5>
+            <p>
+              Descrizione prodotto
+            </p>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <h5 class="mb-3" style="letter-spacing: 2px; color: #818963;">Guida</h5>
+            <ul class="list-unstyled mb-0">
+              <li class="mb-1">
+                <a href="Guida.pdf" target="_blank" class="btn btn-primary">Apri per vedere le istruzioni</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+
+
+          </div>
+        </div>
+      </div>
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2022 Copyright:
+        <a class="text-dark" href="https://mdbootstrap.com/">Bright.com</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+
+  </div>
+  <!-- End of .container -->
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
+  <script src="/js/main.js"></script>
+  <link href="/css/styles.css" rel="stylesheet">
 </body>
+
 </html>
