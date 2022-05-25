@@ -12,10 +12,8 @@ public class CalcoloCondizioni {
 		if(!CalcoloCondizioni.condizioneVerdi(tentativo).isEmpty()) {
 			lista.add(CalcoloCondizioni.condizioneVerdi(tentativo));
 		}
-		if(!CalcoloCondizioni.condizioneGialli(tentativo).isEmpty()) {
-			lista.add(CalcoloCondizioni.condizioneGialli(tentativo));
-		}
 		
+		lista.addAll(CalcoloCondizioni.condizioneGialli(tentativo));
 		lista.addAll(CalcoloCondizioni.condizioneGrigi(tentativo));
 		lista.addAll(CalcoloCondizioni.condizioneOccorrenzeGialli(tentativo));
 		
@@ -56,24 +54,20 @@ public class CalcoloCondizioni {
 		return "word LIKE '" + condizione + "'";
 	}
 
-	public static String condizioneGialli(Tentativo tentativo) {
+	public static List<String> condizioneGialli(Tentativo tentativo) {
 	
-		String condizione = "";
+		List<String> condizioni = new ArrayList<>();
+		
 		// per ogni lettera, di tipo Cella che è contenuto in tentativo.lettere (array
 		// di tipo Cella)
-		for (Cella lettera : tentativo.getLettere()) {
+		for (int i = 0; i < tentativo.getLettere().length; i++) {
+			Cella lettera = tentativo.getLettere()[i];
 			if (lettera.getColore() == Colore.GIALLO) {
-				condizione += lettera.getLettera();
-			} else {
-				condizione += "_";
-			}
+				condizioni.add("word NOT LIKE '" + rimpiazzaCarattere("_____", i, lettera.getLettera()) + "'"); 
+			} 
 		}
 	
-		if (condizione.equals("_____")) {
-			return "";
-		}
-	
-		return "word NOT LIKE '" + condizione + "'";
+		return condizioni;
 	}
 
 	public static List<String> condizioneOccorrenzeGialli(Tentativo tentativo) {
@@ -111,6 +105,13 @@ public class CalcoloCondizioni {
 			}
 		}
 		return lista;
+	}
+	
+	private static String rimpiazzaCarattere(String base, int posizione, char carattere) {
+		
+		char[] caratteri = base.toCharArray();
+		caratteri[posizione] = carattere;
+		return String.valueOf(caratteri);
 	}
 	
 }
