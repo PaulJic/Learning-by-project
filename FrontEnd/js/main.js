@@ -1,3 +1,24 @@
+
+//funziona con la prima riga (per altre righe boh)
+var $inp = $(".passInput");
+$inp.on({
+ input: function(ev) {
+  if(this.value) {
+    $inp.eq($inp.index(this) + 1).focus();
+  }
+ },
+ keydown: function(ev) {
+  var i = $inp.index(this);
+  if(ev.which===8 && !this.value && i) {
+    $inp.eq(i - 1).focus();
+  }
+ }
+});
+
+//test seconda riga
+
+
+
 //fa la chiamata get  
 async function getWord() {
   let url = 'https://bright-wordle.herokuapp.com/api/words';
@@ -12,14 +33,11 @@ async function getWord() {
 async function renderWords() {
   let wordNew = await getWord();
   console.log(wordNew);
-
   //trasforma il json in una stringa più leggibile con solo le parole
   let str = ""
   wordNew.forEach(obj => { Object.values(obj).forEach((val, key) => { str += '' + val + ''; key != 2 ? str += ',\n' : str += '\n\n' }) })
   console.log(str)
-  document.getElementById("indizzi").innerHTML = str;
-
-  return wordNew;
+  document.getElementById("indizi").innerHTML = str;
 }
 
 //bottone reset "partita"
@@ -36,7 +54,7 @@ async function resetIndizzi() {
 //reset div parole
 function resetIndizziInizio() {
   document.getElementById("inizio").innerHTML = "Parole consigliate per iniziare";
-  document.getElementById("indizzi").innerHTML = "amaro, aroma, aereo, reato, torto,\n" +
+  document.getElementById("indizi").innerHTML = "amaro, aroma, aereo, reato, torto,\n" +
     " sotto, tatto, osare, torta, ratto,\n" +
     " onore, stato, rosso, sorso, aceto, \n" +
     "trono, atrio, sosta, costo, tanto, \n" +
@@ -47,8 +65,8 @@ function resetIndizziInizio() {
 function allReset() {
   resetIndizzi();
   resetIndizziInizio();
-  //per ora fa soolo un refresh della pagina per resettare gli input
-  location.reload();
+  //TEST reset campi
+  $(':input').val('');
 }
 
 
@@ -96,7 +114,7 @@ function firsWord() {
   console.log(getWord()); //log per test
   renderWords();
 
-  document.getElementById("inizio").innerHTML = "Indizzi per indovinare";
+  document.getElementById("inizio").innerHTML = "Indizi per indovinare";
 }
 
 
