@@ -38,6 +38,7 @@ async function renderWords() {
   wordNew.forEach(obj => { Object.values(obj).forEach((val, key) => { str += '' + val + ''; key != 2 ? str += ',\n' : str += '\n\n' }) })
   console.log(str)
   document.getElementById("indizi").innerHTML = str;
+  return wordNew;
 }
 
 //bottone reset "partita"
@@ -66,7 +67,6 @@ function allReset() {
   resetIndizzi();
   resetIndizziInizio();
   //TEST reset campi
-  $(':input').val('');
 }
 
 
