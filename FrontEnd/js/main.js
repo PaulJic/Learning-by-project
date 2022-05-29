@@ -15,8 +15,27 @@ $inp.on({
  }
 });
 
-//test seconda riga
-
+//test maiuscole
+function testUppercase() {
+  var x = document.getElementById("letter1");
+  x.value = x.value.toUpperCase();
+}
+function testUppercase2() {
+  var d = document.getElementById("letter2");
+  d.value = d.value.toUpperCase();
+}
+function testUppercase3() {
+  var x = document.getElementById("letter3");
+  x.value = x.value.toUpperCase();
+}
+function testUppercase4() {
+  var d = document.getElementById("letter4");
+  d.value = d.value.toUpperCase();
+}
+function testUppercase5() {
+  var d = document.getElementById("letter5");
+  d.value = d.value.toUpperCase();
+}
 
 
 //fa la chiamata get  
@@ -27,7 +46,7 @@ async function getWord() {
     return await res.json();
   } catch (error) {
     console.log(error);
-  }
+  }   
 }
 //stampa l obj restituito dal get
 async function renderWords() {
@@ -38,7 +57,6 @@ async function renderWords() {
   wordNew.forEach(obj => { Object.values(obj).forEach((val, key) => { str += '' + val + ''; key != 2 ? str += ',\n' : str += '\n\n' }) })
   console.log(str)
   document.getElementById("indizi").innerHTML = str;
-  return wordNew;
 }
 
 //bottone reset "partita"
@@ -67,6 +85,7 @@ function allReset() {
   resetIndizzi();
   resetIndizziInizio();
   //TEST reset campi
+  $(':input').val('');
 }
 
 
@@ -303,6 +322,86 @@ function fifthWord() {
   renderWords();
 }
 
+//grafica 
+
+//colore pulsanti prima lettera 
+function addOrange1(){
+  orange = document.getElementById("letter1");
+  orange.classList.remove("bg-secondary");
+  orange.style.backgroundColor = 'orange';
+}
+function addGreen1(){
+  green1 = document.getElementById("letter1");
+  green1.classList.remove("bg-secondary");
+  green1.style.backgroundColor = 'green';
+}
+function addWhite(){
+  grey1 = document.getElementById("letter1");
+  grey1.classList.add("bg-secondary");
+}
+
+//colore pulsanti seconda lettera 
+function addOrange2(){
+  orange = document.getElementById("letter2");
+  orange.classList.remove("bg-secondary");
+  orange.style.backgroundColor = 'orange';
+}
+function addGreen2(){
+  green1 = document.getElementById("letter2");
+  green1.classList.remove("bg-secondary");
+  green1.style.backgroundColor = 'green';
+}
+function addWhite2(){
+  grey1 = document.getElementById("letter2");
+  grey1.classList.add("bg-secondary");
+}
+
+
+//colore pulsanti terza lettera 
+function addOrange3(){
+  orange = document.getElementById("letter3");
+  orange.classList.remove("bg-secondary");
+  orange.style.backgroundColor = 'orange';
+}
+function addGreen3(){
+  green1 = document.getElementById("letter3");
+  green1.classList.remove("bg-secondary");
+  green1.style.backgroundColor = 'green';
+}
+function addWhite3(){
+  grey1 = document.getElementById("letter3");
+  grey1.classList.add("bg-secondary");
+}
+//colore pulsanti quarta lettera 
+function addOrange4(){
+  orange = document.getElementById("letter4");
+  orange.classList.remove("bg-secondary");
+  orange.style.backgroundColor = 'orange';
+}
+function addGreen4(){
+  green1 = document.getElementById("letter4");
+  green1.classList.remove("bg-secondary");
+  green1.style.backgroundColor = 'green';
+}
+function addWhite4(){
+  grey1 = document.getElementById("letter4");
+  grey1.classList.add("bg-secondary");
+}
+//colore pulsanti quinta lettera 
+function addOrange5(){
+  orange = document.getElementById("letter5");
+  orange.classList.remove("bg-secondary");
+  orange.style.backgroundColor = 'orange';
+}
+function addGreen5(){
+  green1 = document.getElementById("letter5");
+  green1.classList.remove("bg-secondary");
+  green1.style.backgroundColor = 'green';
+}
+function addWhite5(){
+  grey1 = document.getElementById("letter5");
+  grey1.classList.add("bg-secondary");
+}
 
 
 
