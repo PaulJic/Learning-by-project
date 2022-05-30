@@ -1,5 +1,6 @@
+/* prime 5 funzioni per l autocompletamento */
 
-//funziona con la prima riga (per altre righe boh)
+//riga per la prima riga (autocompletamento)
 var $inp = $(".passInput");
 $inp.on({
  input: function(ev) {
@@ -15,7 +16,70 @@ $inp.on({
  }
 });
 
-//test maiuscole
+//riga per la seconda riga (autocompletamento)
+var $inp2 = $(".passInput2");
+$inp2.on({
+ input: function(ev) {
+  if(this.value) {
+    $inp2.eq($inp2.index(this) + 1).focus();
+  }
+ },
+ keydown: function(ev) {
+  var i = $inp2.index(this);
+  if(ev.which===8 && !this.value && i) {
+    $inp2.eq(i - 1).focus();
+  }
+ }
+});
+//riga per la terza riga (autocompletamento)
+var $inp3 = $(".passInput3");
+$inp3.on({
+ input: function(ev) {
+  if(this.value) {
+    $inp3.eq($inp3.index(this) + 1).focus();
+  }
+ },
+ keydown: function(ev) {
+  var i = $inp3.index(this);
+  if(ev.which===8 && !this.value && i) {
+    $inp3.eq(i - 1).focus();
+  }
+ }
+});
+//riga per la quarta riga (autocompletamento)
+var $inp4 = $(".passInput4");
+$inp4.on({
+ input: function(ev) {
+  if(this.value) {
+    $inp4.eq($inp4.index(this) + 1).focus();
+  }
+ },
+ keydown: function(ev) {
+  var i = $inp4.index(this);
+  if(ev.which===8 && !this.value && i) {
+    $inp4.eq(i - 1).focus();
+  }
+ }
+});
+//riga per la quinta riga (autocompletamento)
+var $inp5 = $(".passInput5");
+$inp5.on({
+ input: function(ev) {
+  if(this.value) {
+    $inp5.eq($inp5.index(this) + 1).focus();
+  }
+ },
+ keydown: function(ev) {
+  var i = $inp5.index(this);
+  if(ev.which===8 && !this.value && i) {
+    $inp5.eq(i - 1).focus();
+  }
+ }
+});
+
+
+
+// maiuscole prima riga
 function testUppercase() {
   var x = document.getElementById("letter1");
   x.value = x.value.toUpperCase();
@@ -403,7 +467,46 @@ function addWhite5(){
   grey1.classList.add("bg-secondary");
 }
 
+//test per togliere i 5 pulsanti invio e fare tutto con un solo pulsante e tasto invio
+let count=0;
+//questa funzione viene  eseguita ogni volta che viene premuto invio su qualsiasi input
+$('.container').on('keydown', 'input', function(e) {
+  if (e.keyCode === 13) {
+    e.preventDefault();
+  	e.stopImmediatePropagation();
+    //Do your stuff...
+    document.getElementById("btnEnter").click();
+  }
+});
 
+//funzione del tasto invio che viene richiamata sia con enter che con la pressione del tasto
+function sendAllWord(){
+  count++;
+  console.log(count);
+  if(count == 1){
+    console.log("mando prima parola");
+    firsWord();
+  }
+  if(count == 2){
+    console.log("mando seconda parola");
+    secondWord()
+  }
+  if(count == 3){
+    console.log("mando terza parola");
+    thirdWord();
+  }
+  if(count == 4){
+    console.log("mando quarta parola");
+    fourthWord();
+  }
+  if(count == 5){
+    console.log("mando quinta parola");
+    fifthWord();
+  }
+  if (count == 6) {
+    console.log("troppi tentantivi");
+  }
 
+}
 
 
