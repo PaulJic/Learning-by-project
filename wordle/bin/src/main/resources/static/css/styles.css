@@ -1,0 +1,11 @@
+body{
+    background-color:rgb(202, 202, 202);
+}
+/*
+.btn-group-vertical{
+    float: left;
+    width: 30px;
+}*/
+input{
+    margin-left:  12px;
+}
