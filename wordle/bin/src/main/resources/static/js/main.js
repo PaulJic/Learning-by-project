@@ -1,6 +1,6 @@
 //fa la chiamata get  
 async function getWord() {
-  let url = 'https://bright-wordle.herokuapp.com/api/words';
+  let url = 'https://wordle-test.herokuapp.com/api/words';
   try {
     let res = await fetch(url);
     return await res.json();
@@ -24,7 +24,7 @@ async function renderWords() {
 
 //bottone reset "partita"
 async function resetIndizzi() {
-  let url = 'https://bright-wordle.herokuapp.com/api/reset';
+  let url = 'https://wordle-test.herokuapp.com/api/reset';
   try {
     let res = await fetch(url);
     console.log("nice reset");
@@ -86,7 +86,7 @@ function firsWord() {
   console.log(word1);
 
   //invia la prima parola
-  fetch('https://bright-wordle.herokuapp.com/api/word', {
+  fetch('https://wordle-test.herokuapp.com/api/word', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -136,7 +136,7 @@ function secondWord() {
   console.log(word2);
 
   //invia la prima parola
-  fetch('https://bright-wordle.herokuapp.com/api/word', {
+  fetch('https://wordle-test.herokuapp.com/api/word', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -181,7 +181,7 @@ function thirdWord() {
   console.log(word3);
 
   //invia la prima parola
-  fetch('https://bright-wordle.herokuapp.com/api/word', {
+  fetch('https://wordle-test.herokuapp.com/api/word', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -227,7 +227,7 @@ function fourthWord() {
   console.log(word4);
 
   //invia la prima parola
-  fetch('https://bright-wordle.herokuapp.com/api/word', {
+  fetch('https://wordle-test.herokuapp.com/api/word', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -274,7 +274,7 @@ function fifthWord() {
   console.log(word5);
 
   //invia la prima parola
-  fetch('https://bright-wordle.herokuapp.com/api/word', {
+  fetch('https://wordle-test.herokuapp.com/api/word', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
