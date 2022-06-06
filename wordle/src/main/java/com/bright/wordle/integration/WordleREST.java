@@ -2,6 +2,7 @@ package com.bright.wordle.integration;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.*;
@@ -28,19 +29,22 @@ public class WordleREST {
 	* queste condizioni saranno poi il valore del cookie, accessibile solo dal lato server, che verrà inviato nella response.
 	* */
 	@PostMapping("word")
-	public void setParole(@RequestBody Cella[] t, HttpServletResponse response,HttpServletRequest request) throws IOException {
-		if(t.length>5){
-			response.sendError(400, "Array contains too many elements");
+	public void setParole(@RequestBody Cella[] tent, HttpServletResponse response,HttpServletRequest request) throws IOException {
+		if(tent.length!=5) {
+			response.sendError(400, "Array must contain 5 elements");
 		}
-		for (Cella cella : t) {
+		if(Arrays.stream(tent,0,5).anyMatch(x-> x.getColore().isEmpty()|| !Character.isLetter(x.getLettera()))){
+			response.sendError(400, "Colore or lettera is empty");
+		}
+		for (Cella cella : tent) {
 			cella.setLettera(cella.getLettera());
 		}
 		Cookie cookie;
 		if (request.getCookies() != null && !request.getCookies()[0].getValue().isEmpty()) {
-			cookie = new Cookie("cond", (String.join(" AND ", CalcoloCondizioni.calcola(new Tentativo(t))) + " AND " + request.getCookies()[0].getValue()).replace(",", "|").replace(" ", "9"));
+			cookie = new Cookie("cond", (String.join(" AND ", CalcoloCondizioni.calcola(new Tentativo(tent))) + " AND " + request.getCookies()[0].getValue()).replace(",", "|").replace(" ", "9"));
 		}
 		else{
-			cookie=new Cookie("cond", String.join(" AND ",CalcoloCondizioni.calcola(new Tentativo(t))).replace(",", "|").replace(" ", "9"));
+			cookie=new Cookie("cond", String.join(" AND ",CalcoloCondizioni.calcola(new Tentativo(tent))).replace(",", "|").replace(" ", "9"));
 		}
 		cookie.setHttpOnly(true);
 		cookie.setPath("/api");

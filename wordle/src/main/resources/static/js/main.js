@@ -218,7 +218,7 @@ async function renderWords() {
 }
 
 //bottone reset "partita"
-async function resetIndizzi() {
+async function resetIndizi() {
   let url = 'http://localhost:9045/api/reset';
   try {
     let res = await fetch(url);
@@ -228,7 +228,7 @@ async function resetIndizzi() {
   }
 }
 //reset div parole
-function resetIndizziInizio() {
+function resetIndiziInizio() {
   document.getElementById("inizio").innerHTML = "Parole consigliate per iniziare";
   document.getElementById("indizi").innerHTML = "amaro, aroma, aereo, reato, torto,\n" +
     " sotto, tatto, osare, torta, ratto,\n" +
@@ -236,13 +236,89 @@ function resetIndizziInizio() {
     "trono, atrio, sosta, costo, tanto, \n" +
     " corso, poeta, arena, opera, porto";
 }
+//reset text field
+function resetInput(){
+  document.getElementById("letter1").value = "";
+  document.getElementById("letter2").value = "";
+  document.getElementById("letter3").value = "";
+  document.getElementById("letter4").value = "";
+  document.getElementById("letter5").value = "";
+
+  document.getElementById("letter1-2").value = "";
+  document.getElementById("letter2-2").value = "";
+  document.getElementById("letter3-2").value = "";
+  document.getElementById("letter4-2").value = "";
+  document.getElementById("letter5-2").value = "";
+  
+  document.getElementById("letter1-3").value = "";
+  document.getElementById("letter2-3").value = "";
+  document.getElementById("letter3-3").value = "";
+  document.getElementById("letter4-3").value = "";
+  document.getElementById("letter5-3").value = "";
+  
+  document.getElementById("letter1-4").value = "";
+  document.getElementById("letter2-4").value = "";
+  document.getElementById("letter3-4").value = "";
+  document.getElementById("letter4-4").value = "";
+  document.getElementById("letter5-4").value = "";
+  
+  document.getElementById("letter1-5").value = "";
+  document.getElementById("letter2-5").value = "";
+  document.getElementById("letter3-5").value = "";
+  document.getElementById("letter4-5").value = "";
+  document.getElementById("letter5-5").value = "";
+}
+//reset field
+function resetInputRadio (){
+  document.getElementById("btn1").classList.remove("check");
+  document.getElementById("1p1l").click();
+  document.getElementById("4p1l").click();
+  document.getElementById("7p1l").click();
+  document.getElementById("10p1l").click();
+  document.getElementById("13p1l").click();
+
+  document.getElementById("tr1.1").classList.add("check");
+  document.getElementById("tr1.2").classList.add("check");
+  document.getElementById("1p2l").click();
+  document.getElementById("4p2l").click();
+  document.getElementById("7p2l").click();
+  document.getElementById("10p2l").click();
+  document.getElementById("13p2l").click();
+
+  document.getElementById("tr2.1").classList.add("check");
+  document.getElementById("tr2.2").classList.add("check");
+  document.getElementById("1p3l").click();
+  document.getElementById("4p3l").click();
+  document.getElementById("7p3l").click();
+  document.getElementById("10p3l").click();
+  document.getElementById("13p3l").click();
+
+  document.getElementById("tr3.1").classList.add("check");
+  document.getElementById("tr3.2").classList.add("check");
+  document.getElementById("1p4l").click();
+  document.getElementById("4p4l").click();
+  document.getElementById("7p4l").click();
+  document.getElementById("10p4l").click();
+  document.getElementById("13p4l").click();
+
+  document.getElementById("tr4.1").classList.add("check");
+  document.getElementById("tr4.2").classList.add("check");
+  document.getElementById("1p5l").click();
+  document.getElementById("4p5l").click();
+  document.getElementById("7p5l").click();
+  document.getElementById("10p5l").click();
+  document.getElementById("13p5l").click();
+}
+
 
 //raggruppa i reset
 function allReset() {
-  resetIndizzi();
-  resetIndizziInizio();
+  resetIndizi();
+  resetIndiziInizio();
   count = 0;
-  //location.reload();  
+  resetInputRadio();
+  resetInput();
+
 }
 
 
@@ -292,10 +368,6 @@ async function firsWord() {
   document.getElementById("inizio").innerHTML = "Indizi per indovinare";
 }
 
-
-
-
-
 //bottone secodna parola, manda e riceve le soluzioni
 async function secondWord() {
 
@@ -341,7 +413,6 @@ async function secondWord() {
   
 }
 
-
 //bottone terza parola, manda e riceve le soluzioni
 async function thirdWord() {
 
@@ -385,8 +456,6 @@ async function thirdWord() {
   //console.log(getWord()); //log per test
   await renderWords();
 }
-
-
 
 //bottone quarta parola, manda e riceve le soluzioni
 async function fourthWord() {
@@ -432,9 +501,6 @@ async function fourthWord() {
   await renderWords();
 }
 
-
-
-
 //bottone quarta parola, manda e riceve le soluzioni
 async function fifthWord() {
 
@@ -478,7 +544,6 @@ async function fifthWord() {
   //console.log(getWord()); //log per test
   await renderWords();
 }
-
 
 
 //test per togliere i 5 pulsanti invio e fare tutto con un solo pulsante e tasto invio
