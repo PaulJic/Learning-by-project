@@ -44,7 +44,6 @@ public class WordleREST {
 		}
 		cookie.setHttpOnly(true);
 		cookie.setPath("/api");
-		cookie.setMaxAge(180);
 		response.addCookie(cookie);
 	}
 	/*
@@ -66,6 +65,8 @@ public class WordleREST {
 	@GetMapping("reset")
 	public void resetTentativi(HttpServletResponse response) {
 		Cookie cookie=new Cookie("cond", "");;
+		cookie.setHttpOnly(true);
+		cookie.setPath("/api");
 		response.addCookie(cookie);
 	}
 
