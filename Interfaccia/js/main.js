@@ -236,10 +236,40 @@ function resetIndiziInizio() {
     "trono, atrio, sosta, costo, tanto, \n" +
     " corso, poeta, arena, opera, porto";
 }
+//reset text field
+function resetInput(){
+  document.getElementById("letter1").value = "";
+  document.getElementById("letter2").value = "";
+  document.getElementById("letter3").value = "";
+  document.getElementById("letter4").value = "";
+  document.getElementById("letter5").value = "";
 
+  document.getElementById("letter1-2").value = "";
+  document.getElementById("letter2-2").value = "";
+  document.getElementById("letter3-2").value = "";
+  document.getElementById("letter4-2").value = "";
+  document.getElementById("letter5-2").value = "";
+  
+  document.getElementById("letter1-3").value = "";
+  document.getElementById("letter2-3").value = "";
+  document.getElementById("letter3-3").value = "";
+  document.getElementById("letter4-3").value = "";
+  document.getElementById("letter5-3").value = "";
+  
+  document.getElementById("letter1-4").value = "";
+  document.getElementById("letter2-4").value = "";
+  document.getElementById("letter3-4").value = "";
+  document.getElementById("letter4-4").value = "";
+  document.getElementById("letter5-4").value = "";
+  
+  document.getElementById("letter1-5").value = "";
+  document.getElementById("letter2-5").value = "";
+  document.getElementById("letter3-5").value = "";
+  document.getElementById("letter4-5").value = "";
+  document.getElementById("letter5-5").value = "";
+}
 //reset field
-function resetInput (){
-  $(':input').val('');
+function resetInputRadio (){
   document.getElementById("btn1").classList.remove("check");
   document.getElementById("1p1l").click();
   document.getElementById("4p1l").click();
@@ -286,6 +316,7 @@ function allReset() {
   resetIndizi();
   resetIndiziInizio();
   count = 0;
+  resetInputRadio();
   resetInput();
 
 }
@@ -612,7 +643,7 @@ function sendAllWord(){
     //test per fare una validazione:
     if (word1check() == true) {
       console.log("mando prima parola");
-      //firsWord();
+      firsWord();
       document.getElementById("tr1.1").classList.remove("check");
       document.getElementById("tr1.2").classList.remove("check");
       document.getElementById("btn1").classList.add("check");
@@ -625,7 +656,7 @@ function sendAllWord(){
   if(count == 2){
     if (word2check() == true) {
       console.log("mando seconda parola");
-      //secondWord()
+      secondWord()
     document.getElementById("tr2.1").classList.remove("check");
     document.getElementById("tr2.2").classList.remove("check");
     document.getElementById("tr1.2").classList.add("check");
@@ -637,7 +668,7 @@ function sendAllWord(){
   if(count == 3){
     if (word3check() == true) {
       console.log("mando terza parola");
-      //thirdWord();
+      thirdWord();
       document.getElementById("tr3.1").classList.remove("check");
       document.getElementById("tr3.2").classList.remove("check");
       document.getElementById("tr2.2").classList.add("check");
@@ -650,7 +681,7 @@ function sendAllWord(){
   if(count == 4){
     if (word4check() == true) {
       console.log("mando quarta parola");
-      //fourthWord();
+      fourthWord();
       document.getElementById("tr4.1").classList.remove("check");
       document.getElementById("tr4.2").classList.remove("check");
       document.getElementById("tr3.2").classList.add("check");
@@ -663,7 +694,7 @@ function sendAllWord(){
   if(count == 5){
     if (word5check() == true) {
       console.log("mando quinta parola");
-      //fifthWord();
+      fifthWord();
     }else{
       alert("Mancano una o più lettere!!");
       count--;
