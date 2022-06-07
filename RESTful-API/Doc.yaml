@@ -1,0 +1,368 @@
+_type: export
+__export_format: 4
+__export_date: 2022-06-07T20:31:58.825Z
+__export_source: insomnia.desktop.app:v2022.3.0
+resources:
+  - _id: req_wrk_0313daf0ebab4ee2a6113ec7d3f6a7611e9956e5
+    parentId: wrk_0313daf0ebab4ee2a6113ec7d3f6a761
+    modified: 1654633727451
+    created: 1654633336253
+    url: "{{ base_url }}/word"
+    name: /word
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        [
+          {
+            "lettera": "a",
+            "colore": "grigio"
+          },
+          {
+            "lettera": "b",
+            "colore": "grigio"
+          },
+          {
+            "lettera": "i",
+            "colore": "grigio"
+          },
+          {
+            "lettera": "t",
+            "colore": "grigio"
+          },
+          {
+            "lettera": "o",
+            "colore": "grigio"
+          }
+        ]
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_f0d8293fdb8a48efa66524ff6d933940
+    authentication: {}
+    metaSortKey: -1654633336253
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: wrk_0313daf0ebab4ee2a6113ec7d3f6a761
+    parentId: null
+    modified: 1652606701528
+    created: 1652606701528
+    name: New Document
+    description: ""
+    scope: design
+    _type: workspace
+  - _id: req_wrk_0313daf0ebab4ee2a6113ec7d3f6a761aa05d1b2
+    parentId: wrk_0313daf0ebab4ee2a6113ec7d3f6a761
+    modified: 1654633336249
+    created: 1654633336249
+    url: "{{ base_url }}/reset"
+    name: /reset
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1654633336249
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_wrk_0313daf0ebab4ee2a6113ec7d3f6a761dda12a7d
+    parentId: wrk_0313daf0ebab4ee2a6113ec7d3f6a761
+    modified: 1654633726236
+    created: 1654633178239
+    url: "{{ base_url }}/words"
+    name: /words
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1654633178239
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_5c779ce49314f0b0c41bedf3afe162225b646564
+    parentId: wrk_0313daf0ebab4ee2a6113ec7d3f6a761
+    modified: 1652606701547
+    created: 1652606701547
+    name: Base Environment
+    data:
+      base_url: "{{ scheme }}://{{ host }}{{ base_path }}"
+    dataPropertyOrder: null
+    color: null
+    isPrivate: false
+    metaSortKey: 1652606701547
+    _type: environment
+  - _id: jar_5c779ce49314f0b0c41bedf3afe162225b646564
+    parentId: wrk_0313daf0ebab4ee2a6113ec7d3f6a761
+    modified: 1654633733499
+    created: 1652606701551
+    name: Default Jar
+    cookies:
+      - key: cond
+        value: word9NOT9LIKE9'%a%'9AND9word9NOT9LIKE9'%b%'9AND9word9NOT9LIKE9'%i%'9AND9word9NOT9LIKE9'%t%'9AND9word9NOT9LIKE9'%o%'9AND9word9NOT9LIKE9'%a%'9AND9word9NOT9LIKE9'%b%'9AND9word9NOT9LIKE9'%i%'9AND9word9NOT9LIKE9'%t%'9AND9word9NOT9LIKE9'%o%'
+        domain: localhost
+        path: /api
+        httpOnly: true
+        hostOnly: true
+        creation: 2022-06-07T20:28:19.735Z
+        lastAccessed: 2022-06-07T20:28:53.499Z
+        id: "7014432348907664"
+    _type: cookie_jar
+  - _id: spc_576d42ea1cf14c4d945b3c3bfb49ddd7
+    parentId: wrk_0313daf0ebab4ee2a6113ec7d3f6a761
+    modified: 1654633779340
+    created: 1652606701541
+    fileName: New Document
+    contents: "openapi: 3.0.0
+
+      info:
+
+      \  title: Wordle API
+
+      \  description: Retrieve wordle solutions
+
+      \  version: 0.1.0
+
+      servers:
+
+      \  - url: http://localhost:9045/api/
+
+      \    description: Local server
+
+      paths:
+
+      \  /word:
+
+      \    description: Insert values to filter words
+
+      \    post:
+
+      \      requestBody:
+
+      \        content:\ 
+
+      \          application/json:
+
+      \            schema:
+
+      \              $ref: '#/components/schemas/Celle'
+
+      \      responses:
+
+      \        '200':
+
+      \          description: Success Response, the word has been received
+
+      \          headers:
+
+      \            Set-Cookie:\ 
+
+      \              schema:
+
+      \                type: string
+
+      \                example:
+      cond=word9NOT9LIKE9'%a%'9AND9word9NOT9LIKE9'%b%'9AND9word9NOT9LIKE9'%i%'9\
+      AND9word9NOT9LIKE9'%t%'9AND9word9NOT9LIKE9'%o%';Path=/api;HttpOnly
+
+      \        '400':
+
+      \          description: Wrong request syntax
+
+      \  /words:
+
+      \    get:
+
+      \      description: A list of Wordle solutions based on the post
+      request
+
+      \      parameters:
+
+      \      - in: cookie
+
+      \        name: cond
+
+      \        schema:
+
+      \          type: string
+
+      \          example:
+      word9NOT9LIKE9'%a%'9AND9word9NOT9LIKE9'%b%'9AND9word9NOT9LIKE9'%i%'9AND9w\
+      ord9NOT9LIKE9'%t%'9AND9word9NOT9LIKE9'%o%'
+
+      \      responses:
+
+      \        '200':
+
+      \          description: A JSON array of movies
+
+      \          content:
+
+      \            application/json:
+
+      \              schema:
+
+      \                $ref: '#/components/schemas/Words'
+
+      \        '400':
+
+      \          description: Cookie is null
+
+
+      \  /reset:
+
+      \    description: resets to the application default values
+
+      \    get:
+
+      \      responses:
+
+      \        '200':
+
+      \          description: Request fulfilled
+
+      \          headers:\ 
+
+      \            Set-Cookie:
+
+      \              schema:\ 
+
+      \                type: string
+
+      \                example: cond=; Path=/api; HttpOnly\ 
+
+      \   \ 
+
+      components:
+
+      \  schemas:
+
+      \    Words:
+
+      \      type: array
+
+      \      items:
+
+      \        type: object
+
+      \        properties:
+
+      \          word:
+
+      \            type: string
+
+      \            example: abito  \ 
+
+      \    Celle:
+
+      \      type: array
+
+      \      items:
+
+      \        type: object
+
+      \        properties:
+
+      \          lettera:
+
+      \            type: string
+
+      \            minLength: 1
+
+      \            maxLength: 1
+
+      \            example: a
+
+      \          colore:
+
+      \            type: string
+
+      \            enum: [giallo, verde, grigio]
+
+      \            example: giallo
+
+      \      minItems: 5
+
+      \      maxItems: 5
+
+      \      example:
+
+      \        - lettera: a
+
+      \          colore: grigio
+
+      \        - lettera: b
+
+      \          colore: grigio
+
+      \        - lettera: i
+
+      \          colore: grigio
+
+      \        - lettera: t
+
+      \          colore: grigio
+
+      \        - lettera: o
+
+      \          colore: grigio
+
+
+      \   \ 
+
+      \     \ 
+
+      \  "
+    contentType: yaml
+    _type: api_spec
+  - _id: uts_ff08149c9c4d439690ad2744fb1e46e4
+    parentId: wrk_0313daf0ebab4ee2a6113ec7d3f6a761
+    modified: 1652606701557
+    created: 1652606701557
+    name: Example Test Suite
+    _type: unit_test_suite
+  - _id: env_env_5c779ce49314f0b0c41bedf3afe162225b646564_sub
+    parentId: env_5c779ce49314f0b0c41bedf3afe162225b646564
+    modified: 1654629173119
+    created: 1654629173119
+    name: OpenAPI env
+    data:
+      scheme: http
+      base_path: /api
+      host: localhost:9045
+    dataPropertyOrder: null
+    color: null
+    isPrivate: false
+    metaSortKey: 1654629173119
+    _type: environment
+  - _id: ut_c481b7cff7c84a90ae279563951d7500
+    parentId: uts_ff08149c9c4d439690ad2744fb1e46e4
+    modified: 1654631741265
+    created: 1654631741265
+    requestId: null
+    name: Returns 200
+    code: |-
+      const response1 = await insomnia.send();
+      expect(response1.status).to.equal(200);
+    _type: unit_test
