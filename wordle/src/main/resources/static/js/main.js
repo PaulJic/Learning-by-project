@@ -3,104 +3,103 @@
 //riga per la prima riga (autocompletamento)
 var $inp = $(".passInput");
 $inp.on({
- input: function(ev) {
-  if(this.value) {
-    $inp.eq($inp.index(this) + 1).focus();
+  input: function (ev) {
+    if (this.value) {
+      $inp.eq($inp.index(this) + 1).focus();
+    }
+  },
+  keydown: function (ev) {
+    var i = $inp.index(this);
+    if (ev.which === 8 && !this.value && i) {
+      $inp.eq(i - 1).focus();
+    }
   }
- },
- keydown: function(ev) {
-  var i = $inp.index(this);
-  if(ev.which===8 && !this.value && i) {
-    $inp.eq(i - 1).focus();
-  }
- }
 });
 
 //riga per la seconda riga (autocompletamento)
 var $inp2 = $(".passInput2");
 $inp2.on({
- input: function(ev) {
-  if(this.value) {
-    $inp2.eq($inp2.index(this) + 1).focus();
+  input: function (ev) {
+    if (this.value) {
+      $inp2.eq($inp2.index(this) + 1).focus();
+    }
+  },
+  keydown: function (ev) {
+    var i = $inp2.index(this);
+    if (ev.which === 8 && !this.value && i) {
+      $inp2.eq(i - 1).focus();
+    }
   }
- },
- keydown: function(ev) {
-  var i = $inp2.index(this);
-  if(ev.which===8 && !this.value && i) {
-    $inp2.eq(i - 1).focus();
-  }
- }
 });
 //riga per la terza riga (autocompletamento)
 var $inp3 = $(".passInput3");
 $inp3.on({
- input: function(ev) {
-  if(this.value) {
-    $inp3.eq($inp3.index(this) + 1).focus();
+  input: function (ev) {
+    if (this.value) {
+      $inp3.eq($inp3.index(this) + 1).focus();
+    }
+  },
+  keydown: function (ev) {
+    var i = $inp3.index(this);
+    if (ev.which === 8 && !this.value && i) {
+      $inp3.eq(i - 1).focus();
+    }
   }
- },
- keydown: function(ev) {
-  var i = $inp3.index(this);
-  if(ev.which===8 && !this.value && i) {
-    $inp3.eq(i - 1).focus();
-  }
- }
 });
 //riga per la quarta riga (autocompletamento)
 var $inp4 = $(".passInput4");
 $inp4.on({
- input: function(ev) {
-  if(this.value) {
-    $inp4.eq($inp4.index(this) + 1).focus();
+  input: function (ev) {
+    if (this.value) {
+      $inp4.eq($inp4.index(this) + 1).focus();
+    }
+  },
+  keydown: function (ev) {
+    var i = $inp4.index(this);
+    if (ev.which === 8 && !this.value && i) {
+      $inp4.eq(i - 1).focus();
+    }
   }
- },
- keydown: function(ev) {
-  var i = $inp4.index(this);
-  if(ev.which===8 && !this.value && i) {
-    $inp4.eq(i - 1).focus();
-  }
- }
 });
 //riga per la quinta riga (autocompletamento)
 var $inp5 = $(".passInput5");
 $inp5.on({
- input: function(ev) {
-  if(this.value) {
-    $inp5.eq($inp5.index(this) + 1).focus();
+  input: function (ev) {
+    if (this.value) {
+      $inp5.eq($inp5.index(this) + 1).focus();
+    }
+  },
+  keydown: function (ev) {
+    var i = $inp5.index(this);
+    if (ev.which === 8 && !this.value && i) {
+      $inp5.eq(i - 1).focus();
+    }
   }
- },
- keydown: function(ev) {
-  var i = $inp5.index(this);
-  if(ev.which===8 && !this.value && i) {
-    $inp5.eq(i - 1).focus();
-  }
- }
 });
-
 
 
 // maiuscole prima riga
 {
-function testUppercase() {
-  var x = document.getElementById("letter1");
-  x.value = x.value.toUpperCase();
-}
-function testUppercase2() {
-  var d = document.getElementById("letter2");
-  d.value = d.value.toUpperCase();
-}
-function testUppercase3() {
-  var x = document.getElementById("letter3");
-  x.value = x.value.toUpperCase();
-}
-function testUppercase4() {
-  var d = document.getElementById("letter4");
-  d.value = d.value.toUpperCase();
-}
-function testUppercase5() {
-  var d = document.getElementById("letter5");
-  d.value = d.value.toUpperCase();
-}
+  function testUppercase() {
+    var x = document.getElementById("letter1");
+    x.value = x.value.toUpperCase();
+  }
+  function testUppercase2() {
+    var d = document.getElementById("letter2");
+    d.value = d.value.toUpperCase();
+  }
+  function testUppercase3() {
+    var x = document.getElementById("letter3");
+    x.value = x.value.toUpperCase();
+  }
+  function testUppercase4() {
+    var d = document.getElementById("letter4");
+    d.value = d.value.toUpperCase();
+  }
+  function testUppercase5() {
+    var d = document.getElementById("letter5");
+    d.value = d.value.toUpperCase();
+  }
 }
 // maiuscole seconda riga
 {
@@ -195,7 +194,6 @@ function testUppercase5() {
   }
 }
 
-
 //fa la chiamata get  
 async function getWord() {
   let url = 'http://localhost:9045/api/words';
@@ -204,7 +202,7 @@ async function getWord() {
     return await res.json();
   } catch (error) {
     console.log(error);
-  }   
+  }
 }
 //stampa l obj restituito dal get
 async function renderWords() {
@@ -237,7 +235,7 @@ function resetIndiziInizio() {
     " corso, poeta, arena, opera, porto";
 }
 //reset text field
-function resetInput(){
+function resetInput() {
   document.getElementById("letter1").value = "";
   document.getElementById("letter2").value = "";
   document.getElementById("letter3").value = "";
@@ -249,19 +247,19 @@ function resetInput(){
   document.getElementById("letter3-2").value = "";
   document.getElementById("letter4-2").value = "";
   document.getElementById("letter5-2").value = "";
-  
+
   document.getElementById("letter1-3").value = "";
   document.getElementById("letter2-3").value = "";
   document.getElementById("letter3-3").value = "";
   document.getElementById("letter4-3").value = "";
   document.getElementById("letter5-3").value = "";
-  
+
   document.getElementById("letter1-4").value = "";
   document.getElementById("letter2-4").value = "";
   document.getElementById("letter3-4").value = "";
   document.getElementById("letter4-4").value = "";
   document.getElementById("letter5-4").value = "";
-  
+
   document.getElementById("letter1-5").value = "";
   document.getElementById("letter2-5").value = "";
   document.getElementById("letter3-5").value = "";
@@ -269,7 +267,7 @@ function resetInput(){
   document.getElementById("letter5-5").value = "";
 }
 //reset field
-function resetInputRadio (){
+function resetInputRadio() {
   document.getElementById("btn1").classList.remove("check");
   document.getElementById("1p1l").click();
   document.getElementById("4p1l").click();
@@ -322,9 +320,8 @@ function allReset() {
 }
 
 
-//bottone prima parola, manda e riceve le soluzioni
+//manda e riceve le soluzioni
 async function firsWord() {
-
   //crea l oggetto con i dati dal form (prima parola)
   let word1 = [
     {
@@ -350,12 +347,10 @@ async function firsWord() {
       colore: document.querySelector('input[name="color5"]:checked').value
     }
   ]
-
   //log per test
   console.log(word1);
-
   //invia la prima parola
-  let response=await fetch('http://localhost:9045/api/word', {
+  let response = await fetch('http://localhost:9045/api/word', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -365,13 +360,13 @@ async function firsWord() {
   console.log(response.status);
   await renderWords();
 
+  //cambia titolo per renderlo più compresibile
   document.getElementById("inizio").innerHTML = "Indizi per indovinare";
 }
 
-//bottone secodna parola, manda e riceve le soluzioni
+//manda e riceve le soluzioni della seconda parola 
 async function secondWord() {
-
-  //crea l oggetto con i dati dal form (prima parola)
+  //crea l oggetto con i dati dal form (seconda parola)
   let word2 = [
     {
       lettera: document.getElementById("letter1-2").value,
@@ -401,7 +396,7 @@ async function secondWord() {
   console.log(word2);
 
   //invia la seconda parola
-  let response=await fetch('http://localhost:9045/api/word', {
+  let response = await fetch('http://localhost:9045/api/word', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -409,14 +404,10 @@ async function secondWord() {
     body: JSON.stringify(word2),
   });
   await renderWords();
-  //console.log(getWord()); //log per test
-  
 }
-
-//bottone terza parola, manda e riceve le soluzioni
+// terza parola, manda e riceve le soluzioni
 async function thirdWord() {
-
-  //crea l oggetto con i dati dal form (prima parola)
+  //crea l oggetto con i dati dal form (terza parola)
   let word3 = [
     {
       lettera: document.getElementById("letter1-3").value,
@@ -453,14 +444,12 @@ async function thirdWord() {
     },
     body: JSON.stringify(word3),
   })
-  //console.log(getWord()); //log per test
   await renderWords();
 }
 
-//bottone quarta parola, manda e riceve le soluzioni
+//quarta parola, manda e riceve le soluzioni
 async function fourthWord() {
-
-  //crea l oggetto con i dati dal form (prima parola)
+  //crea l oggetto con i dati dal form (quarta parola)
   let word4 = [
     {
       lettera: document.getElementById("letter1-4").value,
@@ -497,14 +486,13 @@ async function fourthWord() {
     },
     body: JSON.stringify(word4),
   })
-  //console.log(getWord()); //log per test
   await renderWords();
 }
 
-//bottone quarta parola, manda e riceve le soluzioni
+// quarta parola, manda e riceve le soluzioni
 async function fifthWord() {
 
-  //crea l oggetto con i dati dal form (prima parola)
+  //crea l oggetto con i dati dal form (quarta parola)
   let word5 = [
     {
       lettera: document.getElementById("letter1-5").value,
@@ -541,105 +529,99 @@ async function fifthWord() {
     },
     body: JSON.stringify(word5),
   })
-  //console.log(getWord()); //log per test
   await renderWords();
 }
 
-
-//test per togliere i 5 pulsanti invio e fare tutto con un solo pulsante e tasto invio
-let count=0;
+let count = 0;
 //questa funzione viene  eseguita ogni volta che viene premuto invio su qualsiasi input
-$('.container').on('keydown', 'input', function(e) {
+$('.container').on('keydown', 'input', function (e) {
   if (e.keyCode === 13) {
     e.preventDefault();
-  	e.stopImmediatePropagation();
-    //Do your stuff...
+    e.stopImmediatePropagation();
+    //preme il btn invio 
     document.getElementById("btnEnter").click();
   }
 });
 
 
-
-//test check se effettivamente è stato tutti inserito correttamente
-
+//check sulle parole per vedere se sono state tutte inserite correttamente
 //chek prima parola 
-function word1check(){
+function word1check() {
   let a = document.getElementById("letter1").value;
   let b = document.getElementById("letter2").value;
   let c = document.getElementById("letter3").value;
   let d = document.getElementById("letter4").value;
   let e = document.getElementById("letter5").value;
 
-  if( (a && b && c && d && e ) != "" ){
+  if ((a && b && c && d && e) != "") {
     return true;
-  }else{
+  } else {
     return false;
   }
 }
 //chek seconda parola 
-function word2check(){
+function word2check() {
   let a = document.getElementById("letter1-2").value;
   let b = document.getElementById("letter2-2").value;
   let c = document.getElementById("letter3-2").value;
   let d = document.getElementById("letter4-2").value;
   let e = document.getElementById("letter5-2").value;
 
-  if( (a && b && c && d && e ) != "" ){
+  if ((a && b && c && d && e) != "") {
     return true;
-  }else{
+  } else {
     return false;
   }
 }
 //chek terza parola 
-function word3check(){
+function word3check() {
   let a = document.getElementById("letter1-3").value;
   let b = document.getElementById("letter2-3").value;
   let c = document.getElementById("letter3-3").value;
   let d = document.getElementById("letter4-3").value;
   let e = document.getElementById("letter5-3").value;
 
-  if( (a && b && c && d && e ) != "" ){
+  if ((a && b && c && d && e) != "") {
     return true;
-  }else{
+  } else {
     return false;
   }
 }
 //chek quarta parola 
-function word4check(){
+function word4check() {
   let a = document.getElementById("letter1-4").value;
   let b = document.getElementById("letter2-4").value;
   let c = document.getElementById("letter3-4").value;
   let d = document.getElementById("letter4-4").value;
   let e = document.getElementById("letter5-4").value;
 
-  if( (a && b && c && d && e ) != "" ){
+  if ((a && b && c && d && e) != "") {
     return true;
-  }else{
+  } else {
     return false;
   }
 }
 //chek quinta parola 
-function word5check(){
+function word5check() {
   let a = document.getElementById("letter1-5").value;
   let b = document.getElementById("letter2-5").value;
   let c = document.getElementById("letter3-5").value;
   let d = document.getElementById("letter4-5").value;
   let e = document.getElementById("letter5-5").value;
 
-  if( (a && b && c && d && e ) != "" ){
+  if ((a && b && c && d && e) != "") {
     return true;
-  }else{
+  } else {
     return false;
   }
 }
 
 
-//funzione del tasto invio che viene richiamata sia con enter che con la pressione del tasto
-function sendAllWord(){
+//funzione del tasto invio che viene richiamata sia con enter che con la pressione del bottone
+function sendAllWord() {
   count++;
   console.log(count);
-
-  if(count == 1){
+  if (count == 1) {
     //test per fare una validazione:
     if (word1check() == true) {
       console.log("mando prima parola");
@@ -647,59 +629,59 @@ function sendAllWord(){
       document.getElementById("tr1.1").classList.remove("check");
       document.getElementById("tr1.2").classList.remove("check");
       document.getElementById("btn1").classList.add("check");
-    }else{
+    } else {
       alert("Mancano una o più lettere!!");
       count--;
     }
   }
 
-  if(count == 2){
+  if (count == 2) {
     if (word2check() == true) {
       console.log("mando seconda parola");
       secondWord()
-    document.getElementById("tr2.1").classList.remove("check");
-    document.getElementById("tr2.2").classList.remove("check");
-    document.getElementById("tr1.2").classList.add("check");
-    }else{
+      document.getElementById("tr2.1").classList.remove("check");
+      document.getElementById("tr2.2").classList.remove("check");
+      document.getElementById("tr1.2").classList.add("check");
+    } else {
       alert("Mancano una o più lettere!!");
       count--;
     }
   }
-  if(count == 3){
+  if (count == 3) {
     if (word3check() == true) {
       console.log("mando terza parola");
       thirdWord();
       document.getElementById("tr3.1").classList.remove("check");
       document.getElementById("tr3.2").classList.remove("check");
       document.getElementById("tr2.2").classList.add("check");
-    }else{
+    } else {
       alert("Mancano una o più lettere!!");
       count--;
     }
   }
 
-  if(count == 4){
+  if (count == 4) {
     if (word4check() == true) {
       console.log("mando quarta parola");
       fourthWord();
       document.getElementById("tr4.1").classList.remove("check");
       document.getElementById("tr4.2").classList.remove("check");
       document.getElementById("tr3.2").classList.add("check");
-    }else{
+    } else {
       alert("Mancano una o più lettere!!");
       count--;
     }
   }
 
-  if(count == 5){
+  if (count == 5) {
     if (word5check() == true) {
       console.log("mando quinta parola");
       fifthWord();
-    }else{
+    } else {
       alert("Mancano una o più lettere!!");
       count--;
     }
-    
+
   }
 
   if (count == 6) {
@@ -709,415 +691,414 @@ function sendAllWord(){
 
 }
 
-//grafica 
-
+//gestione colori dei pulsanti per modificare colori delle celle in modo dinamico
 //colore pulsanti prima riga 
 {
   //colore pulsanti prima lettera 
-  function addOrange1(){
+  function addOrange1() {
     orange = document.getElementById("letter1");
     orange.classList.remove("bg-secondary");
     orange.style.backgroundColor = 'orange';
   }
-  function addGreen1(){
+  function addGreen1() {
     green1 = document.getElementById("letter1");
     green1.classList.remove("bg-secondary");
     green1.style.backgroundColor = 'green';
   }
-  function addGray(){
+  function addGray() {
     grey1 = document.getElementById("letter1");
     grey1.classList.add("bg-secondary");
   }
-  
+
   //colore pulsanti seconda lettera 
-  function addOrange2(){
+  function addOrange2() {
     orange = document.getElementById("letter2");
     orange.classList.remove("bg-secondary");
     orange.style.backgroundColor = 'orange';
   }
-  function addGreen2(){
+  function addGreen2() {
     green1 = document.getElementById("letter2");
     green1.classList.remove("bg-secondary");
     green1.style.backgroundColor = 'green';
   }
-  function addGray2(){
+  function addGray2() {
     grey1 = document.getElementById("letter2");
     grey1.classList.add("bg-secondary");
   }
-  
-  
+
+
   //colore pulsanti terza lettera 
-  function addOrange3(){
+  function addOrange3() {
     orange = document.getElementById("letter3");
     orange.classList.remove("bg-secondary");
     orange.style.backgroundColor = 'orange';
   }
-  function addGreen3(){
+  function addGreen3() {
     green1 = document.getElementById("letter3");
     green1.classList.remove("bg-secondary");
     green1.style.backgroundColor = 'green';
   }
-  function addGray3(){
+  function addGray3() {
     grey1 = document.getElementById("letter3");
     grey1.classList.add("bg-secondary");
   }
   //colore pulsanti quarta lettera 
-  function addOrange4(){
+  function addOrange4() {
     orange = document.getElementById("letter4");
     orange.classList.remove("bg-secondary");
     orange.style.backgroundColor = 'orange';
   }
-  function addGreen4(){
+  function addGreen4() {
     green1 = document.getElementById("letter4");
     green1.classList.remove("bg-secondary");
     green1.style.backgroundColor = 'green';
   }
-  function addGray4(){
+  function addGray4() {
     grey1 = document.getElementById("letter4");
     grey1.classList.add("bg-secondary");
   }
   //colore pulsanti quinta lettera 
-  function addOrange5(){
+  function addOrange5() {
     orange = document.getElementById("letter5");
     orange.classList.remove("bg-secondary");
     orange.style.backgroundColor = 'orange';
   }
-  function addGreen5(){
+  function addGreen5() {
     green1 = document.getElementById("letter5");
     green1.classList.remove("bg-secondary");
     green1.style.backgroundColor = 'green';
   }
-  function addGray5(){
+  function addGray5() {
     grey1 = document.getElementById("letter5");
     grey1.classList.add("bg-secondary");
   }
-  }
+}
 
 //colore pulsanti seconda riga 
 {
   //colore pulsanti prima lettera 
-  function addOrange12(){
+  function addOrange12() {
     orange = document.getElementById("letter1-2");
     orange.classList.remove("bg-secondary");
     orange.style.backgroundColor = 'orange';
   }
-  function addGreen12(){
+  function addGreen12() {
     green1 = document.getElementById("letter1-2");
     green1.classList.remove("bg-secondary");
     green1.style.backgroundColor = 'green';
   }
-  function addGray12(){
+  function addGray12() {
     grey1 = document.getElementById("letter1-2");
     grey1.classList.add("bg-secondary");
   }
-  
+
   //colore pulsanti seconda lettera 
-  function addOrange22(){
+  function addOrange22() {
     orange = document.getElementById("letter2-2");
     orange.classList.remove("bg-secondary");
     orange.style.backgroundColor = 'orange';
   }
-  function addGreen22(){
+  function addGreen22() {
     green1 = document.getElementById("letter2-2");
     green1.classList.remove("bg-secondary");
     green1.style.backgroundColor = 'green';
   }
-  function addGray22(){
+  function addGray22() {
     grey1 = document.getElementById("letter2-2");
     grey1.classList.add("bg-secondary");
   }
-  
-  
+
+
   //colore pulsanti terza lettera 
-  function addOrange32(){
+  function addOrange32() {
     orange = document.getElementById("letter3-2");
     orange.classList.remove("bg-secondary");
     orange.style.backgroundColor = 'orange';
   }
-  function addGreen32(){
+  function addGreen32() {
     green1 = document.getElementById("letter3-2");
     green1.classList.remove("bg-secondary");
     green1.style.backgroundColor = 'green';
   }
-  function addGray32(){
+  function addGray32() {
     grey1 = document.getElementById("letter3-2");
     grey1.classList.add("bg-secondary");
   }
   //colore pulsanti quarta lettera 
-  function addOrange42(){
+  function addOrange42() {
     orange = document.getElementById("letter4-2");
     orange.classList.remove("bg-secondary");
     orange.style.backgroundColor = 'orange';
   }
-  function addGreen42(){
+  function addGreen42() {
     green1 = document.getElementById("letter4-2");
     green1.classList.remove("bg-secondary");
     green1.style.backgroundColor = 'green';
   }
-  function addGray42(){
+  function addGray42() {
     grey1 = document.getElementById("letter4-2");
     grey1.classList.add("bg-secondary");
   }
   //colore pulsanti quinta lettera 
-  function addOrange52(){
+  function addOrange52() {
     orange = document.getElementById("letter5-2");
     orange.classList.remove("bg-secondary");
     orange.style.backgroundColor = 'orange';
   }
-  function addGreen52(){
+  function addGreen52() {
     green1 = document.getElementById("letter5-2");
     green1.classList.remove("bg-secondary");
     green1.style.backgroundColor = 'green';
   }
-  function addGray52(){
+  function addGray52() {
     grey1 = document.getElementById("letter5-2");
     grey1.classList.add("bg-secondary");
   }
-  }
+}
 
 //colore pulsanti terza riga 
 {
   //colore pulsanti prima lettera 
-  function addOrange13(){
+  function addOrange13() {
     orange = document.getElementById("letter1-3");
     orange.classList.remove("bg-secondary");
     orange.style.backgroundColor = 'orange';
   }
-  function addGreen13(){
+  function addGreen13() {
     green1 = document.getElementById("letter1-3");
     green1.classList.remove("bg-secondary");
     green1.style.backgroundColor = 'green';
   }
-  function addGray13(){
+  function addGray13() {
     grey1 = document.getElementById("letter1-3");
     grey1.classList.add("bg-secondary");
   }
-  
+
   //colore pulsanti seconda lettera 
-  function addOrange23(){
+  function addOrange23() {
     orange = document.getElementById("letter2-3");
     orange.classList.remove("bg-secondary");
     orange.style.backgroundColor = 'orange';
   }
-  function addGreen23(){
+  function addGreen23() {
     green1 = document.getElementById("letter2-3");
     green1.classList.remove("bg-secondary");
     green1.style.backgroundColor = 'green';
   }
-  function addGray23(){
+  function addGray23() {
     grey1 = document.getElementById("letter2-3");
     grey1.classList.add("bg-secondary");
   }
-  
-  
+
+
   //colore pulsanti terza lettera 
-  function addOrange33(){
+  function addOrange33() {
     orange = document.getElementById("letter3-3");
     orange.classList.remove("bg-secondary");
     orange.style.backgroundColor = 'orange';
   }
-  function addGreen33(){
+  function addGreen33() {
     green1 = document.getElementById("letter3-3");
     green1.classList.remove("bg-secondary");
     green1.style.backgroundColor = 'green';
   }
-  function addGray33(){
+  function addGray33() {
     grey1 = document.getElementById("letter3-3");
     grey1.classList.add("bg-secondary");
   }
   //colore pulsanti quarta lettera 
-  function addOrange43(){
+  function addOrange43() {
     orange = document.getElementById("letter4-3");
     orange.classList.remove("bg-secondary");
     orange.style.backgroundColor = 'orange';
   }
-  function addGreen43(){
+  function addGreen43() {
     green1 = document.getElementById("letter4-3");
     green1.classList.remove("bg-secondary");
     green1.style.backgroundColor = 'green';
   }
-  function addGray43(){
+  function addGray43() {
     grey1 = document.getElementById("letter4-3");
     grey1.classList.add("bg-secondary");
   }
   //colore pulsanti quinta lettera 
-  function addOrange53(){
+  function addOrange53() {
     orange = document.getElementById("letter5-3");
     orange.classList.remove("bg-secondary");
     orange.style.backgroundColor = 'orange';
   }
-  function addGreen53(){
+  function addGreen53() {
     green1 = document.getElementById("letter5-3");
     green1.classList.remove("bg-secondary");
     green1.style.backgroundColor = 'green';
   }
-  function addGray53(){
+  function addGray53() {
     grey1 = document.getElementById("letter5-3");
     grey1.classList.add("bg-secondary");
   }
-  }
+}
 
 //colore pulsanti quarta riga 
 {
   //colore pulsanti prima lettera 
-  function addOrange14(){
+  function addOrange14() {
     orange = document.getElementById("letter1-4");
     orange.classList.remove("bg-secondary");
     orange.style.backgroundColor = 'orange';
   }
-  function addGreen14(){
+  function addGreen14() {
     green1 = document.getElementById("letter1-4");
     green1.classList.remove("bg-secondary");
     green1.style.backgroundColor = 'green';
   }
-  function addGray14(){
+  function addGray14() {
     grey1 = document.getElementById("letter1-4");
     grey1.classList.add("bg-secondary");
   }
-  
+
   //colore pulsanti seconda lettera 
-  function addOrange24(){
+  function addOrange24() {
     orange = document.getElementById("letter2-4");
     orange.classList.remove("bg-secondary");
     orange.style.backgroundColor = 'orange';
   }
-  function addGreen24(){
+  function addGreen24() {
     green1 = document.getElementById("letter2-4");
     green1.classList.remove("bg-secondary");
     green1.style.backgroundColor = 'green';
   }
-  function addGray24(){
+  function addGray24() {
     grey1 = document.getElementById("letter2-4");
     grey1.classList.add("bg-secondary");
   }
-  
-  
+
+
   //colore pulsanti terza lettera 
-  function addOrange34(){
+  function addOrange34() {
     orange = document.getElementById("letter3-4");
     orange.classList.remove("bg-secondary");
     orange.style.backgroundColor = 'orange';
   }
-  function addGreen34(){
+  function addGreen34() {
     green1 = document.getElementById("letter3-4");
     green1.classList.remove("bg-secondary");
     green1.style.backgroundColor = 'green';
   }
-  function addGray34(){
+  function addGray34() {
     grey1 = document.getElementById("letter3-4");
     grey1.classList.add("bg-secondary");
   }
   //colore pulsanti quarta lettera 
-  function addOrange44(){
+  function addOrange44() {
     orange = document.getElementById("letter4-4");
     orange.classList.remove("bg-secondary");
     orange.style.backgroundColor = 'orange';
   }
-  function addGreen44(){
+  function addGreen44() {
     green1 = document.getElementById("letter4-4");
     green1.classList.remove("bg-secondary");
     green1.style.backgroundColor = 'green';
   }
-  function addGray44(){
+  function addGray44() {
     grey1 = document.getElementById("letter4-4");
     grey1.classList.add("bg-secondary");
   }
   //colore pulsanti quinta lettera 
-  function addOrange54(){
+  function addOrange54() {
     orange = document.getElementById("letter5-4");
     orange.classList.remove("bg-secondary");
     orange.style.backgroundColor = 'orange';
   }
-  function addGreen54(){
+  function addGreen54() {
     green1 = document.getElementById("letter5-4");
     green1.classList.remove("bg-secondary");
     green1.style.backgroundColor = 'green';
   }
-  function addGray54(){
+  function addGray54() {
     grey1 = document.getElementById("letter5-4");
     grey1.classList.add("bg-secondary");
   }
-  }
+}
 
 //colore pulsanti quinta riga 
 {
   //colore pulsanti prima lettera 
-  function addOrange15(){
+  function addOrange15() {
     orange = document.getElementById("letter1-5");
     orange.classList.remove("bg-secondary");
     orange.style.backgroundColor = 'orange';
   }
-  function addGreen15(){
+  function addGreen15() {
     green1 = document.getElementById("letter1-5");
     green1.classList.remove("bg-secondary");
     green1.style.backgroundColor = 'green';
   }
-  function addGray15(){
+  function addGray15() {
     grey1 = document.getElementById("letter1-5");
     grey1.classList.add("bg-secondary");
   }
-  
+
   //colore pulsanti seconda lettera 
-  function addOrange25(){
+  function addOrange25() {
     orange = document.getElementById("letter2-5");
     orange.classList.remove("bg-secondary");
     orange.style.backgroundColor = 'orange';
   }
-  function addGreen25(){
+  function addGreen25() {
     green1 = document.getElementById("letter2-5");
     green1.classList.remove("bg-secondary");
     green1.style.backgroundColor = 'green';
   }
-  function addGray25(){
+  function addGray25() {
     grey1 = document.getElementById("letter2-5");
     grey1.classList.add("bg-secondary");
   }
-  
-  
+
+
   //colore pulsanti terza lettera 
-  function addOrange35(){
+  function addOrange35() {
     orange = document.getElementById("letter3-5");
     orange.classList.remove("bg-secondary");
     orange.style.backgroundColor = 'orange';
   }
-  function addGreen35(){
+  function addGreen35() {
     green1 = document.getElementById("letter3-5");
     green1.classList.remove("bg-secondary");
     green1.style.backgroundColor = 'green';
   }
-  function addGray35(){
+  function addGray35() {
     grey1 = document.getElementById("letter3-5");
     grey1.classList.add("bg-secondary");
   }
   //colore pulsanti quarta lettera 
-  function addOrange45(){
+  function addOrange45() {
     orange = document.getElementById("letter4-5");
     orange.classList.remove("bg-secondary");
     orange.style.backgroundColor = 'orange';
   }
-  function addGreen45(){
+  function addGreen45() {
     green1 = document.getElementById("letter4-5");
     green1.classList.remove("bg-secondary");
     green1.style.backgroundColor = 'green';
   }
-  function addGray45(){
+  function addGray45() {
     grey1 = document.getElementById("letter4-5");
     grey1.classList.add("bg-secondary");
   }
   //colore pulsanti quinta lettera 
-  function addOrange55(){
+  function addOrange55() {
     orange = document.getElementById("letter5-5");
     orange.classList.remove("bg-secondary");
     orange.style.backgroundColor = 'orange';
   }
-  function addGreen55(){
+  function addGreen55() {
     green1 = document.getElementById("letter5-5");
     green1.classList.remove("bg-secondary");
     green1.style.backgroundColor = 'green';
   }
-  function addGray55(){
+  function addGray55() {
     grey1 = document.getElementById("letter5-5");
     grey1.classList.add("bg-secondary");
   }
-  }
+}
 
