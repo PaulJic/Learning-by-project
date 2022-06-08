@@ -1,5 +1,7 @@
 # BrIghT group
+
 ### Componenti:
+
 - Paul Sebastian Jicmon (**_team leader_**)
 - Marika Crivellari
 - Matteo Drago
@@ -13,19 +15,19 @@ L'applicativo che andremo a sviluppare, attraverso il collegamento con un databa
 
 
 ### Linguaggi utilizzati
+
 * Per la parte **_backend_** ci siamo avvalsi di Java per lo sviluppo dell'algotritmo e delle query che consentono al programma di selezionare le soluzioni più attendibili.
 * Per quanto riguarda l'**_interfaccia grafica_** abbiamo utilizzato un file HTML(implementato con file CSS e JavaScript esterni).
 * Per la struttura del **_database_** abbiamo utilizzato il SQL per la creazione e il popolamento delle tabelle.
 
 ### Manuale d'uso
+
 Per utilizzare quetso software è necessario aprire [Wordle Italiano](https://wordleitaliano.com/) e in contemporanea l'applicativo. Una volta inserita una parola (che può essere una di quelle suggerite sull'interfaccia), bisogna trascrivere le lettere all'interno delle caselle del nostro programma indicando la colorazione che viene assegnata ad esse (*verde*: la lettera è contenuta nella parola ed è nella corretta posizione, *giallo*: la lettera è contenuta nella parola ma si trova nella posizione sbagliata, *grigio*: la lettera non è contenuta all'interno della parola) dal gioco e premere invio.
 Il nostro software selezionerà le parole corrispondenti alle caratteristiche restituite da Wordle prendendole da un database di vocaboli comprendente tutte le possibili soluzioni. 
 Man mano che si faranno tentativi il numero di suggerimenti andrà a ridursi fino a trovare la voce richiesta dal gioco. 
 
-### Documentazione backend
-
-
 ### Documentazione frontend
+
 Il codice di frontend è un file HTML con riferimenti esterni per quanto riguarda sia lo script (con JavaScript) che lo stile (con CSS).
 
 Questa è la strutturazione nel file **_HTML_** della prima riga di celle:
