@@ -22,9 +22,14 @@ L'applicativo che andremo a sviluppare, attraverso il collegamento con un databa
 
 ### Manuale d'uso
 
-Per utilizzare quetso software è necessario aprire [Wordle Italiano](https://wordleitaliano.com/) e in contemporanea l'applicativo. Una volta inserita una parola (che può essere una di quelle suggerite sull'interfaccia), bisogna trascrivere le lettere all'interno delle caselle del nostro programma indicando la colorazione che viene assegnata ad esse (*verde*: la lettera è contenuta nella parola ed è nella corretta posizione, *giallo*: la lettera è contenuta nella parola ma si trova nella posizione sbagliata, *grigio*: la lettera non è contenuta all'interno della parola) dal gioco e premere invio.
-Il nostro software selezionerà le parole corrispondenti alle caratteristiche restituite da Wordle prendendole da un database di vocaboli comprendente tutte le possibili soluzioni. 
-Man mano che si faranno tentativi il numero di suggerimenti andrà a ridursi fino a trovare la voce richiesta dal gioco. 
+Per utilizzare quetso software è necessario aprire [Wordle Italiano](https://wordleitaliano.com/) e in contemporanea l'applicativo. Una volta inserita una parola (che può essere una di quelle suggerite sull'interfaccia), bisogna: 
+
+-Trascrivere le lettere all'interno delle caselle del nostro programma indicando la colorazione che viene assegnata ad esse dal gioco (*verde*: la lettera è contenuta nella parola ed è nella corretta posizione, *giallo*: la lettera è contenuta nella parola ma si trova nella posizione sbagliata, *grigio*: la lettera non è contenuta all'interno della parola). 
+
+-Premere il bottone invio oppure un enter da tastiera.  
+
+Il nostro software selezionerà le parole corrispondenti alle caratteristiche restituite da Wordle prendendole da un database di vocaboli comprendente tutte le possibili soluzioni.
+Man mano che si faranno tentativi il numero di suggerimenti andrà a ridursi fino a trovare la voce richiesta dal gioco.
 
 ### Documentazione frontend
 
