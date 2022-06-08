@@ -8,14 +8,16 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
+   <!-- test jquery --> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 
 <body>
   <nav class="navbar navbar-dark bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">
-        <img src="img/IconNav.PNG" alt="" width="30" height="24" class="d-inline-block align-text-top">
-        Bright
+        <img src="img/Logo.png" alt="" width="60" height="24" class="d-inline-block align-text-top">
+        
       </a>
     </div>
   </nav>
@@ -26,102 +28,98 @@
         Italiano</a></p>
     <div class="row">
       <div class="col">
-        <table class="table-active ">
+        <table class="table-active  ">
           <tbody>
             <tr>
               <!-- prima riga 5 celle -->
               <td>
-                <div class="col-xs-1 " style="max-width: 50px;">
-                  <input class="form-control" type="text" maxlength="1" id="letter1">
+                <div class="col-xs-1" style="max-width: 50px;">
+                  <input class="form-control passInput bg-secondary"   type="text" onkeydown="return /[a-z]/i.test(event.key)" maxlength="1"   id="letter1"  onblur="testUppercase()" >
                 </div>
               </td>
 
               <td>
                 <div class="col-xs-1" style="max-width: 50px;">
-                  <input class="form-control" type="text" maxlength="1" id="letter2">
+                  <input class="form-control passInput bg-secondary"   type="text" onkeydown="return /[a-z]/i.test(event.key)" maxlength="1"   id="letter2" onblur="testUppercase2()">
                 </div>
               </td>
               <td>
                 <div class="col-xs-1" style="max-width: 50px;">
-                  <input class="form-control" type="text" maxlength="1" id="letter3">
+                  <input class="form-control passInput bg-secondary"   type="text" onkeydown="return /[a-z]/i.test(event.key)" maxlength="1"   id="letter3"  onblur="testUppercase3()">
                 </div>
               </td>
               <td>
                 <div class="col-xs-1" style="max-width: 50px;">
-                  <input class="form-control" type="text" maxlength="1" id="letter4">
+                  <input class="form-control passInput bg-secondary"   type="text" onkeydown="return /[a-z]/i.test(event.key)" maxlength="1"   id="letter4"  onblur="testUppercase4()">
                 </div>
               </td>
               <td>
                 <div class="col-xs-1" style="max-width: 50px;">
-                  <input class="form-control" type="text" maxlength="1" id="letter5">
-                </div>
-              </td>
-              <td>
-                <div class="col-xs-1">
-                  <button type="button" class="btn btn-success" onclick="firsWord()">Invio</button>
+                  <input class="form-control passInput bg-secondary"   type="text" onkeydown="return /[a-z]/i.test(event.key)" maxlength="1"   id="letter5"  onblur="testUppercase5()">
                 </div>
               </td>
             </tr>
+            <tr id="btn1">
             <td>
               <!-- primi 5 radio -->
               <div class="btn-group noborder">
-                <input type="radio" class="btn-check" name="color1" id="1p1l" autocomplete="off" value="grigio" checked>
+                <input type="radio" class="btn-check" name="color1" id="1p1l" autocomplete="off" value="grigio" onclick="addGray()" checked>
                 <label class="btn btn-outline-secondary" for="1p1l"></label>
 
-                <input type="radio" class="btn-check" name="color1" id="2p1l" autocomplete="off" value="giallo">
+                <input type="radio" class="btn-check" name="color1" id="2p1l" autocomplete="off" value="giallo"  onclick="addOrange1()">
                 <label class="btn btn-outline-warning" for="2p1l"></label>
 
-                <input type="radio" class="btn-check" name="color1" id="3p1l" autocomplete="off" value="verde">
+                <input type="radio" class="btn-check" name="color1" id="3p1l" autocomplete="off" value="verde" onclick="addGreen1()">
                 <label class="btn btn-outline-success" for="3p1l"></label>
               </div>
             </td>
             <td>
               <div class="btn-group noborder">
-                <input type="radio" class="btn-check" name="color2" id="4p1l" autocomplete="off" value="grigio" checked>
+                <input type="radio" class="btn-check" name="color2" id="4p1l" autocomplete="off" value="grigio"  onclick="addGray2()" checked>
                 <label class="btn btn-outline-secondary" for="4p1l"></label>
 
-                <input type="radio" class="btn-check" name="color2" id="5p1l" autocomplete="off" value="giallo">
+                <input type="radio" class="btn-check" name="color2" id="5p1l" autocomplete="off" value="giallo"  onclick="addOrange2()">
                 <label class="btn btn-outline-warning" for="5p1l"></label>
 
-                <input type="radio" class="btn-check" name="color2" id="6p1l" autocomplete="off" value="verde">
+                <input type="radio" class="btn-check" name="color2" id="6p1l" autocomplete="off" value="verde"  onclick="addGreen2()">
                 <label class="btn btn-outline-success" for="6p1l"></label>
               </div>
             </td>
             <td>
               <div class="btn-group noborder">
-                <input type="radio" class="btn-check" name="color3" id="7p1l" autocomplete="off" value="grigio" checked>
+                <input type="radio" class="btn-check" name="color3" id="7p1l" autocomplete="off" value="grigio" onclick="addGray3()" checked>
                 <label class="btn btn-outline-secondary" for="7p1l"></label>
 
-                <input type="radio" class="btn-check" name="color3" id="8p1l" autocomplete="off" value="giallo">
+                <input type="radio" class="btn-check" name="color3" id="8p1l" autocomplete="off" value="giallo" onclick="addOrange3()">
                 <label class="btn btn-outline-warning" for="8p1l"></label>
 
-                <input type="radio" class="btn-check" name="color3" id="9p1l" autocomplete="off" value="verde">
+                <input type="radio" class="btn-check" name="color3" id="9p1l" autocomplete="off" value="verde" onclick="addGreen3()">
                 <label class="btn btn-outline-success" for="9p1l"></label>
               </div>
             </td>
             <td>
               <div class="btn-group noborder">
-                <input type="radio" class="btn-check" name="color4" id="10p1l" autocomplete="off" value="grigio"
+                <input type="radio" class="btn-check" name="color4" id="10p1l" autocomplete="off" value="grigio" onclick="addGray4()"
                   checked>
                 <label class="btn btn-outline-secondary" for="10p1l"></label>
 
-                <input type="radio" class="btn-check" name="color4" id="11p1l" autocomplete="off" value="giallo">
+                <input type="radio" class="btn-check" name="color4" id="11p1l" autocomplete="off" value="giallo" onclick="addOrange4()">
                 <label class="btn btn-outline-warning" for="11p1l"></label>
 
-                <input type="radio" class="btn-check" name="color4" id="12p1l" autocomplete="off" value="verde">
+                <input type="radio" class="btn-check" name="color4" id="12p1l" autocomplete="off" value="verde" onclick="addGreen4()">
                 <label class="btn btn-outline-success" for="12p1l"></label>
               </div>
             </td>
             <td>
               <div class="btn-group noborder">
-                <input type="radio" class="btn-check" name="color5" id="13p1l" autocomplete="off" value="grigio"
+                <input type="radio" class="btn-check" name="color5" id="13p1l" autocomplete="off" value="grigio" onclick="addGray5()"
                   checked>
                 <label class="btn btn-outline-secondary" for="13p1l"></label>
 
-                <input type="radio" class="btn-check" name="color5" id="14p1l" autocomplete="off" value="giallo">
+                <input type="radio" class="btn-check" name="color5" id="14p1l" autocomplete="off" value="giallo" onclick="addOrange5()">
                 <label class="btn btn-outline-warning" for="14p1l"></label>
 
-                <input type="radio" class="btn-check" name="color5" id="15p1l" autocomplete="off" value="verde">
+                <input type="radio" class="btn-check" name="color5" id="15p1l" autocomplete="off" value="verde" onclick="addGreen5()">
                 <label class="btn btn-outline-success" for="15p1l"></label>
               </div>
             </td>
@@ -135,102 +133,98 @@
 
 
             <!-- Seconda riga celle -->
-            <tr>
+            <tr class="check" id="tr1.1">
               <td>
                 <div class="col-xs-1" style="max-width: 50px;">
-                  <input class="form-control" type="text" maxlength="1" id="letter1-2">
+                  <input class="form-control passInput2 bg-secondary  " type="text" onkeydown="return /[a-z]/i.test(event.key)" maxlength="1" id="letter1-2" onblur="testUppercase12()">
                 </div>
               </td>
 
               <td>
                 <div class="col-xs-1" style="max-width: 50px;">
-                  <input class="form-control" type="text" maxlength="1" id="letter2-2">
+                  <input class="form-control passInput2 bg-secondary " type="text" onkeydown="return /[a-z]/i.test(event.key)" maxlength="1" id="letter2-2" onblur="testUppercase22()">
                 </div>
               </td>
               <td>
                 <div class="col-xs-1" style="max-width: 50px;">
-                  <input class="form-control" type="text" maxlength="1" id="letter3-2">
+                  <input class="form-control passInput2 bg-secondary " type="text" onkeydown="return /[a-z]/i.test(event.key)" maxlength="1" id="letter3-2" onblur="testUppercase32()">
                 </div>
               </td>
               <td>
                 <div class="col-xs-1" style="max-width: 50px;">
-                  <input class="form-control" type="text" maxlength="1" id="letter4-2">
+                  <input class="form-control passInput2 bg-secondary " type="text" onkeydown="return /[a-z]/i.test(event.key)" maxlength="1" id="letter4-2" onblur="testUppercase42()">
                 </div>
               </td>
               <td>
                 <div class="col-xs-1" style="max-width: 50px;">
-                  <input class="form-control" type="text" maxlength="1" id="letter5-2">
-                </div>
-              </td>
-              <td>
-                <div class="col-xs-1">
-                  <button type="button" class="btn btn-success" onclick="secondWord()">Invio</button>
+                  <input class="form-control passInput2 bg-secondary " type="text" onkeydown="return /[a-z]/i.test(event.key)" maxlength="1" id="letter5-2" onblur="testUppercase52()">
                 </div>
               </td>
             </tr>
+            <tr class="check" id="tr1.2">
             <td>
               <!-- Seconda riga input radio -->
               <div class="btn-group noborder">
-                <input type="radio" class="btn-check" name="color1-2" id="1p2l" autocomplete="off" value="grigio"
-                  checked>
+                <input type="radio" class="btn-check" name="color1-2" id="1p2l" autocomplete="off" value="grigio" onclick="addGray12()"
+                  checked >
                 <label class="btn btn-outline-secondary" for="1p2l"></label>
 
-                <input type="radio" class="btn-check" name="color1-2" id="2p2l" autocomplete="off" value="giallo">
+                <input type="radio" class="btn-check" name="color1-2" id="2p2l" autocomplete="off" value="giallo" onclick="addOrange12()">
                 <label class="btn btn-outline-warning" for="2p2l"></label>
 
-                <input type="radio" class="btn-check" name="color1-2" id="3p2l" autocomplete="off" value="verde">
+                <input type="radio" class="btn-check" name="color1-2" id="3p2l" autocomplete="off" value="verde" onclick="addGreen12()">
                 <label class="btn btn-outline-success" for="3p2l"></label>
               </div>
             </td>
             <td>
               <div class="btn-group noborder">
-                <input type="radio" class="btn-check" name="color2-2" id="4p2l" autocomplete="off" value="grigio"
+                <input type="radio" class="btn-check" name="color2-2" id="4p2l" autocomplete="off" value="grigio" onclick="addGray22()"
                   checked>
                 <label class="btn btn-outline-secondary" for="4p2l"></label>
 
-                <input type="radio" class="btn-check" name="color2-2" id="5p2l" autocomplete="off" value="giallo">
+                <input type="radio" class="btn-check" name="color2-2" id="5p2l" autocomplete="off" value="giallo" onclick="addOrange22()">
                 <label class="btn btn-outline-warning" for="5p2l"></label>
 
-                <input type="radio" class="btn-check" name="color2-2" id="6p2l" autocomplete="off" value="verde">
+                <input type="radio" class="btn-check" name="color2-2" id="6p2l" autocomplete="off" value="verde" onclick="addGreen22()">
                 <label class="btn btn-outline-success" for="6p2l"></label>
               </div>
             </td>
             <td>
               <div class="btn-group noborder">
-                <input type="radio" class="btn-check" name="color3-2" id="7p2l" autocomplete="off" value="grigio"
+                <input type="radio" class="btn-check" name="color3-2" id="7p2l" autocomplete="off" value="grigio" onclick="addGray32()"
                   checked>
                 <label class="btn btn-outline-secondary" for="7p2l"></label>
 
-                <input type="radio" class="btn-check" name="color3-2" id="8p2l" autocomplete="off" value="giallo">
+                <input type="radio" class="btn-check" name="color3-2" id="8p2l" autocomplete="off" value="giallo" onclick="addOrange32()">
                 <label class="btn btn-outline-warning" for="8p2l"></label>
 
-                <input type="radio" class="btn-check" name="color3-2" id="9p2l" autocomplete="off" value="verde">
+                <input type="radio" class="btn-check" name="color3-2" id="9p2l" autocomplete="off" value="verde" onclick="addGreen32()">
                 <label class="btn btn-outline-success" for="9p2l"></label>
               </div>
             </td>
             <td>
               <div class="btn-group noborder">
-                <input type="radio" class="btn-check" name="color4-2" id="10p2l" autocomplete="off" value="grigio"
+                <input type="radio" class="btn-check" name="color4-2" id="10p2l" autocomplete="off" value="grigio" onclick="addGray42()"
                   checked>
                 <label class="btn btn-outline-secondary" for="10p2l"></label>
 
-                <input type="radio" class="btn-check" name="color4-2" id="11p2l" autocomplete="off" value="giallo">
+                <input type="radio" class="btn-check" name="color4-2" id="11p2l" autocomplete="off" value="giallo" onclick="addOrange42()">
                 <label class="btn btn-outline-warning" for="11p2l"></label>
 
-                <input type="radio" class="btn-check" name="color4-2" id="12p2l" autocomplete="off" value="verde">
+                <input type="radio" class="btn-check" name="color4-2" id="12p2l" autocomplete="off" value="verde" onclick="addGreen42()">
                 <label class="btn btn-outline-success" for="12p2l"></label>
               </div>
             </td>
             <td>
               <div class="btn-group noborder">
-                <input type="radio" class="btn-check" name="color5-2" id="13p2l" autocomplete="off" value="grigio"
+                <input type="radio" class="btn-check" name="color5-2" id="13p2l" autocomplete="off" value="grigio" onclick="addGray52()"
                   checked>
                 <label class="btn btn-outline-secondary" for="13p2l"></label>
 
-                <input type="radio" class="btn-check" name="color5-2" id="14p2l" autocomplete="off" value="giallo">
+                <input type="radio" class="btn-check" name="color5-2" id="14p2l" autocomplete="off" value="giallo" onclick="addOrange52()">
                 <label class="btn btn-outline-warning" for="14p2l"></label>
 
-                <input type="radio" class="btn-check" name="color5-2" id="15p2l" autocomplete="off" value="verde">
+                <input type="radio" class="btn-check" name="color5-2" id="15p2l" autocomplete="off" value="verde" onclick="addGreen52()">
                 <label class="btn btn-outline-success" for="15p2l"></label>
               </div>
             </td>
@@ -239,103 +233,98 @@
 
 
             <!-- Terza riga celle -->
-            <tr>
+            <tr class="check" id="tr2.1">
               <td>
                 <div class="col-xs-1 " style="max-width: 50px;">
-                  <input class="form-control" type="text" maxlength="1" id="letter1-3">
+                  <input class="form-control passInput3 bg-secondary" type="text" onkeydown="return /[a-z]/i.test(event.key)" maxlength="1" id="letter1-3"  onblur="testUppercase13()">
                 </div>
               </td>
 
               <td>
                 <div class="col-xs-1" style="max-width: 50px;">
-                  <input class="form-control" type="text" maxlength="1" id="letter2-3">
+                  <input class="form-control passInput3 bg-secondary" type="text" onkeydown="return /[a-z]/i.test(event.key)" maxlength="1" id="letter2-3"  onblur="testUppercase23()">
                 </div>
               </td>
               <td>
                 <div class="col-xs-1" style="max-width: 50px;">
-                  <input class="form-control" type="text" maxlength="1" id="letter3-3">
+                  <input class="form-control passInput3 bg-secondary" type="text" onkeydown="return /[a-z]/i.test(event.key)" maxlength="1" id="letter3-3"  onblur="testUppercase33()">
                 </div>
               </td>
               <td>
                 <div class="col-xs-1" style="max-width: 50px;">
-                  <input class="form-control" type="text" maxlength="1" id="letter4-3">
+                  <input class="form-control passInput3 bg-secondary" type="text" onkeydown="return /[a-z]/i.test(event.key)" maxlength="1" id="letter4-3"  onblur="testUppercase43()">
                 </div>
               </td>
               <td>
                 <div class="col-xs-1" style="max-width: 50px;">
-                  <input class="form-control" type="text" maxlength="1" id="letter5-3">
-                </div>
-              </td>
-              <td>
-                <div class="col-xs-1">
-                  <button type="button" class="btn btn-success" onclick="thirdWord()">Invio</button>
+                  <input class="form-control passInput3 bg-secondary" type="text" onkeydown="return /[a-z]/i.test(event.key)" maxlength="1" id="letter5-3"  onblur="testUppercase53()">
                 </div>
               </td>
             </tr>
-            <tr>
+            <tr class="check" id="tr2.2"> 
               <td>
                 <!-- Terza riga input radio -->
                 <div class="btn-group noborder">
-                  <input type="radio" class="btn-check" name="color1-3" id="1p3l" autocomplete="off" value="grigio"
+                  <input type="radio" class="btn-check" name="color1-3" id="1p3l" autocomplete="off" value="grigio" onclick="addGray13()"
                     checked>
                   <label class="btn btn-outline-secondary" for="1p3l"></label>
 
-                  <input type="radio" class="btn-check" name="color1-3" id="2p3l" autocomplete="off" value="giallo">
+                  <input type="radio" class="btn-check" name="color1-3" id="2p3l" autocomplete="off" value="giallo" onclick="addOrange13()">
                   <label class="btn btn-outline-warning" for="2p3l"></label>
 
-                  <input type="radio" class="btn-check" name="color1-3" id="3p3l" autocomplete="off" value="verde">
+                  <input type="radio" class="btn-check" name="color1-3" id="3p3l" autocomplete="off" value="verde" onclick="addGreen13()">
                   <label class="btn btn-outline-success" for="3p3l"></label>
                 </div>
               </td>
               <td>
                 <div class="btn-group noborder">
-                  <input type="radio" class="btn-check" name="color2-3" id="4p3l" autocomplete="off" value="grigio"
+                  <input type="radio" class="btn-check" name="color2-3" id="4p3l" autocomplete="off" value="grigio" onclick="addGray23()"
                     checked>
                   <label class="btn btn-outline-secondary" for="4p3l"></label>
 
-                  <input type="radio" class="btn-check" name="color2-3" id="5p3l" autocomplete="off" value="giallo">
+                  <input type="radio" class="btn-check" name="color2-3" id="5p3l" autocomplete="off" value="giallo" onclick="addOrange23()">
                   <label class="btn btn-outline-warning" for="5p3l"></label>
 
-                  <input type="radio" class="btn-check" name="color2-3" id="6p3l" autocomplete="off" value="verde">
+                  <input type="radio" class="btn-check" name="color2-3" id="6p3l" autocomplete="off" value="verde" onclick="addGreen23()">
                   <label class="btn btn-outline-success" for="6p3l"></label>
                 </div>
               </td>
               <td>
                 <div class="btn-group noborder">
-                  <input type="radio" class="btn-check" name="color3-3" id="7p3l" autocomplete="off" value="grigio"
+                  <input type="radio" class="btn-check" name="color3-3" id="7p3l" autocomplete="off" value="grigio" onclick="addGray33()" 
                     checked>
                   <label class="btn btn-outline-secondary" for="7p3l"></label>
 
-                  <input type="radio" class="btn-check" name="color3-3" id="8p3l" autocomplete="off" value="giallo">
+                  <input type="radio" class="btn-check" name="color3-3" id="8p3l" autocomplete="off" value="giallo" onclick="addOrange33()">
                   <label class="btn btn-outline-warning" for="8p3l"></label>
 
-                  <input type="radio" class="btn-check" name="color3-3" id="9p3l" autocomplete="off" value="verde">
+                  <input type="radio" class="btn-check" name="color3-3" id="9p3l" autocomplete="off" value="verde" onclick="addGreen33()">
                   <label class="btn btn-outline-success" for="9p3l"></label>
                 </div>
               </td>
               <td>
                 <div class="btn-group noborder">
-                  <input type="radio" class="btn-check" name="color4-3" id="10p3l" autocomplete="off" value="grigio"
+                  <input type="radio" class="btn-check" name="color4-3" id="10p3l" autocomplete="off" value="grigio" onclick="addGray43()"
                     checked>
                   <label class="btn btn-outline-secondary" for="10p3l"></label>
 
-                  <input type="radio" class="btn-check" name="color4-3" id="11p3l" autocomplete="off" value="giallo">
+                  <input type="radio" class="btn-check" name="color4-3" id="11p3l" autocomplete="off" value="giallo" onclick="addOrange43()">
                   <label class="btn btn-outline-warning" for="11p3l"></label>
 
-                  <input type="radio" class="btn-check" name="color4-3" id="12p3l" autocomplete="off" value="verde">
+                  <input type="radio" class="btn-check" name="color4-3" id="12p3l" autocomplete="off" value="verde" onclick="addGreen43()">
                   <label class="btn btn-outline-success" for="12p3l"></label>
                 </div>
               </td>
               <td>
                 <div class="btn-group noborder">
-                  <input type="radio" class="btn-check" name="color5-3" id="13p3l" autocomplete="off" value="grigio"
+                  <input type="radio" class="btn-check" name="color5-3" id="13p3l" autocomplete="off" value="grigio" onclick="addGray53()"
                     checked>
                   <label class="btn btn-outline-secondary" for="13p3l"></label>
 
-                  <input type="radio" class="btn-check" name="color5-3" id="14p3l" autocomplete="off" value="giallo">
+                  <input type="radio" class="btn-check" name="color5-3" id="14p3l" autocomplete="off" value="giallo" onclick="addOrange53()">
                   <label class="btn btn-outline-warning" for="14p3l"></label>
 
-                  <input type="radio" class="btn-check" name="color5-3" id="15p3l" autocomplete="off" value="verde">
+                  <input type="radio" class="btn-check" name="color5-3" id="15p3l" autocomplete="off" value="verde" onclick="addGreen53()">
                   <label class="btn btn-outline-success" for="15p3l"></label>
                 </div>
               </td>
@@ -344,103 +333,98 @@
 
 
             <!-- Quarta riga celle -->
-            <tr>
+            <tr class="check" id="tr3.1">
               <td>
                 <div class="col-xs-1 " style="max-width: 50px;">
-                  <input class="form-control" type="text" maxlength="1" id="letter1-4">
+                  <input class="form-control passInput4 bg-secondary" type="text" onkeydown="return /[a-z]/i.test(event.key)" maxlength="1" id="letter1-4" onblur="testUppercase14()">
                 </div>
               </td>
 
               <td>
                 <div class="col-xs-1" style="max-width: 50px;">
-                  <input class="form-control" type="text" maxlength="1" id="letter2-4">
+                  <input class="form-control passInput4 bg-secondary" type="text" onkeydown="return /[a-z]/i.test(event.key)" maxlength="1" id="letter2-4" onblur="testUppercase24()">
                 </div>
               </td>
               <td>
                 <div class="col-xs-1" style="max-width: 50px;">
-                  <input class="form-control" type="text" maxlength="1" id="letter3-4">
+                  <input class="form-control passInput4 bg-secondary" type="text" onkeydown="return /[a-z]/i.test(event.key)" maxlength="1" id="letter3-4" onblur="testUppercase34()">
                 </div>
               </td>
               <td>
                 <div class="col-xs-1" style="max-width: 50px;">
-                  <input class="form-control" type="text" maxlength="1" id="letter4-4">
+                  <input class="form-control passInput4 bg-secondary" type="text" onkeydown="return /[a-z]/i.test(event.key)" maxlength="1" id="letter4-4" onblur="testUppercase44()">
                 </div>
               </td>
               <td>
                 <div class="col-xs-1" style="max-width: 50px;">
-                  <input class="form-control" type="text" maxlength="1" id="letter5-4">
-                </div>
-              </td>
-              <td>
-                <div class="col-xs-1">
-                  <button type="button" class="btn btn-success" onclick="fourthWord()">Invio</button>
+                  <input class="form-control passInput4 bg-secondary" type="text" onkeydown="return /[a-z]/i.test(event.key)" maxlength="1" id="letter5-4" onblur="testUppercase54()">
                 </div>
               </td>
             </tr>
-            <tr>
+            <tr class="check" id="tr3.2">
               <td>
                 <!-- Quarta riga input radio -->
                 <div class="btn-group noborder">
-                  <input type="radio" class="btn-check" name="color1-4" id="1p4l" autocomplete="off" value="grigio"
+                  <input type="radio" class="btn-check" name="color1-4" id="1p4l" autocomplete="off" value="grigio" onclick="addGray14()"
                     checked>
                   <label class="btn btn-outline-secondary" for="1p4l"></label>
 
-                  <input type="radio" class="btn-check" name="color1-4" id="2p4l" autocomplete="off" value="giallo">
+                  <input type="radio" class="btn-check" name="color1-4" id="2p4l" autocomplete="off" value="giallo" onclick="addOrange14()">
                   <label class="btn btn-outline-warning" for="2p4l"></label>
 
-                  <input type="radio" class="btn-check" name="color1-4" id="3p4l" autocomplete="off" value="verde">
+                  <input type="radio" class="btn-check" name="color1-4" id="3p4l" autocomplete="off" value="verde" onclick="addGreen14()">
                   <label class="btn btn-outline-success" for="3p4l"></label>
                 </div>
               </td>
               <td>
                 <div class="btn-group noborder">
-                  <input type="radio" class="btn-check" name="color2-4" id="4p4l" autocomplete="off" value="grigio"
+                  <input type="radio" class="btn-check" name="color2-4" id="4p4l" autocomplete="off" value="grigio" onclick="addGray24()"
                     checked>
                   <label class="btn btn-outline-secondary" for="4p4l"></label>
 
-                  <input type="radio" class="btn-check" name="color2-4" id="5p4l" autocomplete="off" value="giallo">
+                  <input type="radio" class="btn-check" name="color2-4" id="5p4l" autocomplete="off" value="giallo" onclick="addOrange24()">
                   <label class="btn btn-outline-warning" for="5p4l"></label>
 
-                  <input type="radio" class="btn-check" name="color2-4" id="6p4l" autocomplete="off" value="verde">
+                  <input type="radio" class="btn-check" name="color2-4" id="6p4l" autocomplete="off" value="verde" onclick="addGreen24()">
                   <label class="btn btn-outline-success" for="6p4l"></label>
                 </div>
               </td>
               <td>
                 <div class="btn-group noborder">
-                  <input type="radio" class="btn-check" name="color3-4" id="7p4l" autocomplete="off" value="grigio"
+                  <input type="radio" class="btn-check" name="color3-4" id="7p4l" autocomplete="off" value="grigio" onclick="addGray34()"
                     checked>
                   <label class="btn btn-outline-secondary" for="7p4l"></label>
 
-                  <input type="radio" class="btn-check" name="color3-4" id="8p4l" autocomplete="off" value="giallo">
+                  <input type="radio" class="btn-check" name="color3-4" id="8p4l" autocomplete="off" value="giallo" onclick="addOrange34()">
                   <label class="btn btn-outline-warning" for="8p4l"></label>
 
-                  <input type="radio" class="btn-check" name="color3-4" id="9p4l" autocomplete="off" value="verde">
+                  <input type="radio" class="btn-check" name="color3-4" id="9p4l" autocomplete="off" value="verde" onclick="addGreen34()">
                   <label class="btn btn-outline-success" for="9p4l"></label>
                 </div>
               </td>
               <td>
                 <div class="btn-group noborder">
-                  <input type="radio" class="btn-check" name="color4-4" id="10p4l" autocomplete="off" value="grigio"
+                  <input type="radio" class="btn-check" name="color4-4" id="10p4l" autocomplete="off" value="grigio" onclick="addGray44()"
                     checked>
                   <label class="btn btn-outline-secondary" for="10p4l"></label>
 
-                  <input type="radio" class="btn-check" name="color4-4" id="11p4l" autocomplete="off" value="giallo">
+                  <input type="radio" class="btn-check" name="color4-4" id="11p4l" autocomplete="off" value="giallo" onclick="addOrange44()">
                   <label class="btn btn-outline-warning" for="11p4l"></label>
 
-                  <input type="radio" class="btn-check" name="color4-4" id="12p4l" autocomplete="off" value="verde">
+                  <input type="radio" class="btn-check" name="color4-4" id="12p4l" autocomplete="off" value="verde" onclick="addGreen44()">
                   <label class="btn btn-outline-success" for="12p4l"></label>
                 </div>
               </td>
               <td>
                 <div class="btn-group noborder">
-                  <input type="radio" class="btn-check" name="color5-4" id="13p4l" autocomplete="off" value="grigio"
+                  <input type="radio" class="btn-check" name="color5-4" id="13p4l" autocomplete="off" value="grigio" onclick="addGray54()"
                     checked>
                   <label class="btn btn-outline-secondary" for="13p4l"></label>
 
-                  <input type="radio" class="btn-check" name="color5-4" id="14p4l" autocomplete="off" value="giallo">
+                  <input type="radio" class="btn-check" name="color5-4" id="14p4l" autocomplete="off" value="giallo" onclick="addOrange54()">
                   <label class="btn btn-outline-warning" for="14p4l"></label>
 
-                  <input type="radio" class="btn-check" name="color5-4" id="15p4l" autocomplete="off" value="verde">
+                  <input type="radio" class="btn-check" name="color5-4" id="15p4l" autocomplete="off" value="verde" onclick="addGreen54()">
                   <label class="btn btn-outline-success" for="15p4l"></label>
                 </div>
               </td>
@@ -449,103 +433,98 @@
 
 
             <!-- Quinta riga celle -->
-            <tr>
+            <tr class="check" id="tr4.1">
               <td>
                 <div class="col-xs-1 " style="max-width: 50px;">
-                  <input class="form-control" type="text" maxlength="1" id="letter1-5">
+                  <input class="form-control passInput5 bg-secondary" type="text" onkeydown="return /[a-z]/i.test(event.key)" maxlength="1" id="letter1-5" onblur="testUppercase15()">
                 </div>
               </td>
 
               <td>
                 <div class="col-xs-1" style="max-width: 50px;">
-                  <input class="form-control" type="text" maxlength="1" id="letter2-5">
+                  <input class="form-control passInput5 bg-secondary" type="text" onkeydown="return /[a-z]/i.test(event.key)" maxlength="1" id="letter2-5" onblur="testUppercase25()">
                 </div>
               </td>
               <td>
                 <div class="col-xs-1" style="max-width: 50px;">
-                  <input class="form-control" type="text" maxlength="1" id="letter3-5">
+                  <input class="form-control passInput5 bg-secondary" type="text" onkeydown="return /[a-z]/i.test(event.key)" maxlength="1" id="letter3-5" onblur="testUppercase35()">
                 </div>
               </td>
               <td>
                 <div class="col-xs-1" style="max-width: 50px;">
-                  <input class="form-control" type="text" maxlength="1" id="letter4-5">
+                  <input class="form-control passInput5 bg-secondary" type="text" onkeydown="return /[a-z]/i.test(event.key)" maxlength="1" id="letter4-5" onblur="testUppercase45()">
                 </div>
               </td>
               <td>
                 <div class="col-xs-1" style="max-width: 50px;">
-                  <input class="form-control" type="text" maxlength="1" id="letter5-5">
-                </div>
-              </td>
-              <td>
-                <div class="col-xs-1">
-                  <button type="button" class="btn btn-success" onclick="fifthWord()">Invio</button>
+                  <input class="form-control passInput5 bg-secondary" type="text" onkeydown="return /[a-z]/i.test(event.key)" maxlength="1" id="letter5-5" onblur="testUppercase55()">
                 </div>
               </td>
             </tr>
-            <tr>
+            <tr class="check" id="tr4.2">
               <td>
                 <!-- Quinta riga input radio -->
                 <div class="btn-group noborder">
-                  <input type="radio" class="btn-check" name="color1-5" id="1p5l" autocomplete="off" value="grigio"
+                  <input type="radio" class="btn-check" name="color1-5" id="1p5l" autocomplete="off" value="grigio" onclick="addGray15()"
                     checked>
                   <label class="btn btn-outline-secondary" for="1p5l"></label>
 
-                  <input type="radio" class="btn-check" name="color1-5" id="2p5l" autocomplete="off" value="giallo">
+                  <input type="radio" class="btn-check" name="color1-5" id="2p5l" autocomplete="off" value="giallo" onclick="addOrange15()">
                   <label class="btn btn-outline-warning" for="2p5l"></label>
 
-                  <input type="radio" class="btn-check" name="color1-5" id="3p5l" autocomplete="off" value="verde">
+                  <input type="radio" class="btn-check" name="color1-5" id="3p5l" autocomplete="off" value="verde" onclick="addGreen15()">
                   <label class="btn btn-outline-success" for="3p5l"></label>
                 </div>
               </td>
               <td>
                 <div class="btn-group noborder">
-                  <input type="radio" class="btn-check" name="color2-5" id="4p5l" autocomplete="off" value="grigio"
+                  <input type="radio" class="btn-check" name="color2-5" id="4p5l" autocomplete="off" value="grigio" onclick="addGray25()"
                     checked>
                   <label class="btn btn-outline-secondary" for="4p5l"></label>
 
-                  <input type="radio" class="btn-check" name="color2-5" id="5p5l" autocomplete="off" value="giallo">
+                  <input type="radio" class="btn-check" name="color2-5" id="5p5l" autocomplete="off" value="giallo" onclick="addOrange25()" >
                   <label class="btn btn-outline-warning" for="5p5l"></label>
 
-                  <input type="radio" class="btn-check" name="color2-5" id="6p5l" autocomplete="off" value="verde">
+                  <input type="radio" class="btn-check" name="color2-5" id="6p5l" autocomplete="off" value="verde" onclick="addGreen25()">
                   <label class="btn btn-outline-success" for="6p5l"></label>
                 </div>
               </td>
               <td>
                 <div class="btn-group noborder">
-                  <input type="radio" class="btn-check" name="color3-5" id="7p5l" autocomplete="off" value="grigio"
+                  <input type="radio" class="btn-check" name="color3-5" id="7p5l" autocomplete="off" value="grigio" onclick="addGray35()"
                     checked>
                   <label class="btn btn-outline-secondary" for="7p5l"></label>
 
-                  <input type="radio" class="btn-check" name="color3-5" id="8p5l" autocomplete="off" value="giallo">
+                  <input type="radio" class="btn-check" name="color3-5" id="8p5l" autocomplete="off" value="giallo" onclick="addOrange35()">
                   <label class="btn btn-outline-warning" for="8p5l"></label>
 
-                  <input type="radio" class="btn-check" name="color3-5" id="9p5l" autocomplete="off" value="verde">
+                  <input type="radio" class="btn-check" name="color3-5" id="9p5l" autocomplete="off" value="verde" onclick="addGreen35()">
                   <label class="btn btn-outline-success" for="9p5l"></label>
                 </div>
               </td>
               <td>
                 <div class="btn-group noborder">
-                  <input type="radio" class="btn-check" name="color4-5" id="10p5l" autocomplete="off" value="grigio"
+                  <input type="radio" class="btn-check" name="color4-5" id="10p5l" autocomplete="off" value="grigio" onclick="addGray45()"
                     checked>
                   <label class="btn btn-outline-secondary" for="10p5l"></label>
 
-                  <input type="radio" class="btn-check" name="color4-5" id="11p5l" autocomplete="off" value="giallo">
+                  <input type="radio" class="btn-check" name="color4-5" id="11p5l" autocomplete="off" value="giallo" onclick="addOrange45()">
                   <label class="btn btn-outline-warning" for="11p5l"></label>
 
-                  <input type="radio" class="btn-check" name="color4-5" id="12p5l" autocomplete="off" value="verde">
+                  <input type="radio" class="btn-check" name="color4-5" id="12p5l" autocomplete="off" value="verde" onclick="addGreen45()">
                   <label class="btn btn-outline-success" for="12p5l"></label>
                 </div>
               </td>
               <td>
                 <div class="btn-group noborder">
-                  <input type="radio" class="btn-check" name="color5-5" id="13p5l" autocomplete="off" value="grigio"
+                  <input type="radio" class="btn-check" name="color5-5" id="13p5l" autocomplete="off" value="grigio" onclick="addGray55()"
                     checked>
                   <label class="btn btn-outline-secondary" for="13p5l"></label>
 
-                  <input type="radio" class="btn-check" name="color5-5" id="14p5l" autocomplete="off" value="giallo">
+                  <input type="radio" class="btn-check" name="color5-5" id="14p5l" autocomplete="off" value="giallo" onclick="addOrange55()">
                   <label class="btn btn-outline-warning" for="14p5l"></label>
 
-                  <input type="radio" class="btn-check" name="color5-5" id="15p5l" autocomplete="off" value="verde">
+                  <input type="radio" class="btn-check" name="color5-5" id="15p5l" autocomplete="off" value="verde" onclick="addGreen55()">
                   <label class="btn btn-outline-success" for="15p5l"></label>
                 </div>
               </td>
@@ -554,13 +533,15 @@
           </tbody>
         </table>
 
+        <div class="col-lg-3">
+        <button type="button" class="btn btn-success" id="btnEnter" onclick="sendAllWord()">Invio</button>
         <button type="button" class="btn btn-danger" onclick="allReset()">Reset</button>
-
+        </div>
 
       </div>
       <div class="col">
         <h1 id="inizio">Parole consigliate per iniziare</h1>
-        <p id="indizzi">
+        <p id="indizi">
           amaro, aroma, aereo, reato, torto,
           sotto, tatto, osare, torta, ratto,
           onore, stato, rosso, sorso, aceto,
@@ -569,7 +550,6 @@
       </div>
     </div>
   </div>
-
 
 
   <!-- fondo pagina descritivo -->
@@ -600,7 +580,7 @@
       </div>
       <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
         © 2022 Copyright:
-        <a class="text-dark" href="https://mdbootstrap.com/">Bright.com</a>
+        <a class="text-dark" href="">Bright.com</a>
       </div>
       <!-- Copyright -->
     </footer>
@@ -609,11 +589,15 @@
   <!-- End of .container -->
 
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
     crossorigin="anonymous"></script>
-  <script src="/js/main.js"></script>
-  <link href="/css/styles.css" rel="stylesheet">
+  
+  <script src="./js/main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <link href="./css/styles.css" rel="stylesheet">
 </body>
 
 </html>

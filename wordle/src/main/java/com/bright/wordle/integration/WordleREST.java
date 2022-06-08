@@ -30,11 +30,8 @@ public class WordleREST {
 	* */
 	@PostMapping("word")
 	public void setParole(@RequestBody Cella[] tent, HttpServletResponse response,HttpServletRequest request) throws IOException {
-		if(tent.length!=5) {
-			response.sendError(400, "Array must contain 5 elements");
-		}
-		if(Arrays.stream(tent,0,5).anyMatch(x-> x.getColore().isEmpty()|| !Character.isLetter(x.getLettera()))){
-			response.sendError(400, "Colore or lettera is empty");
+		if(Arrays.stream(tent,0,5).anyMatch(x-> x.getColore().isEmpty()||!(x.getColore().equals("grigio")||x.getColore().equals("giallo")||x.getColore().equals("verde"))|| !Character.isLetter(x.getLettera()))){
+			response.sendError(400, "Values not accepted are present either in colore or lettera");
 		}
 		for (Cella cella : tent) {
 			cella.setLettera(cella.getLettera());
