@@ -26,7 +26,7 @@ Per utilizzare quetso software è necessario aprire [Wordle Italiano](https://wo
 
 -Trascrivere le lettere all'interno delle caselle del nostro programma indicando la colorazione che viene assegnata ad esse dal gioco (*verde*: la lettera è contenuta nella parola ed è nella corretta posizione, *giallo*: la lettera è contenuta nella parola ma si trova nella posizione sbagliata, *grigio*: la lettera non è contenuta all'interno della parola). 
 
--Premere il bottone invio oppure un enter da tastiera.  
+-Premere il bottone invio oppure enter da tastiera.  
 
 Il nostro software selezionerà le parole corrispondenti alle caratteristiche restituite da Wordle prendendole da un database di vocaboli comprendente tutte le possibili soluzioni.
 Man mano che si faranno tentativi il numero di suggerimenti andrà a ridursi fino a trovare la voce richiesta dal gioco.
@@ -137,9 +137,9 @@ Mentre questa è la struttura dei primi **_5 bottoni radio_** per indicare il co
             </td>
             </tr>
 
-Le restanti 4 righe (sia di celle che di redio button), avranno la stessa conformazione ma avranno ID differenti per facilitarne le modifiche stilistiche.
+Le restanti 4 righe (sia di celle che di radio button), avranno la stessa conformazione ma avranno ID differenti per facilitarne le modifiche stilistiche.
 
-In questa partre di codice vengono caricati i link per i file **_CSS_** e **_JavaScript_**:
+In questa parte di codice vengono caricati i link per i file **_CSS_** e **_JavaScript_**:
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
