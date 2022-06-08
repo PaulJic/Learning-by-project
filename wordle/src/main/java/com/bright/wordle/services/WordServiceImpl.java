@@ -11,7 +11,10 @@ import com.bright.wordle.repos.WordDAOJDBC;
 @Service
 public class WordServiceImpl implements WordService {
 	private WordDAOJDBC jdbc= new WordDAOJDBC();
-
+	/**
+	 * Sfruttando il parametro utilizza un'istanza di WordDAOJDBC per ricevere una lista di Word dal DB
+	 * @param s Stringa sintatticamente valida per la clausola where nel linguaggio SQL
+	 * */
 	@Override
 	public List<Word> findWordss(String s) {
 		try {

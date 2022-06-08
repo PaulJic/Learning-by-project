@@ -5,7 +5,11 @@ import java.util.List;
 
 
 public class CalcoloCondizioni {
-
+	/**
+	 * A partire da un Tentativo, restituisce una lista che presenta tutte le 
+	 * condizioni necessarie a genera una query che filtra i record del DB
+	 * @param tentativo oggetto di classe Tentativo dal quale generare le condizioni
+	 * */
 	public static List<String> calcola(Tentativo tentativo) {
 
 		List<String> lista = new ArrayList<>();
@@ -23,8 +27,9 @@ public class CalcoloCondizioni {
 
 		return lista;
 	}
-	/*
+	/**
 	* Restituisce stringa per la creazione della query riguardante le celle verdi
+	* @param tentativo Tentativo dal quale generare le condizioni
 	* */
 	public static String condizioneVerdi(Tentativo tentativo) {
 
@@ -43,10 +48,12 @@ public class CalcoloCondizioni {
 
 		return "word LIKE '" + condizione + "'";
 	}
-	/*
-	* restituisce lista contente le condizioni per la query che restituirà
+	/**
+	* restituisce lista contente le condizioni per la query che selezionerà
 	* le parole non contententi quelle lettere la cui posizione
-	* corrisponde alle lettre gialle dell'array */
+	* corrisponde alle lettere gialle dell'array 
+	* @param tentativo Tentativo dal quale generare le condizioni
+	* */
 	public static List<String> condizioneGialli(Tentativo tentativo) {
 		List<String> lista= new ArrayList<>();
 		for(int j=0;j<5;j++) {
@@ -59,9 +66,10 @@ public class CalcoloCondizioni {
 		}
 		return lista;
 	}
-	/*
-	* restituisce lista contente le condizioni per le parole contenenti le lettere gialle
+	/**
+	* restituisce lista contente le condizioni per generare una query che selezionerà le parole che presentano le lettere gialle
 	* tenendo conto che la stessa lettera può esserci molteplici volte
+	* @param tentativo dal quale generare le condizioni
 	* */
 	public static List<String> condizioneOccorrenzeGialli(Tentativo tentativo) {
 
@@ -87,8 +95,9 @@ public class CalcoloCondizioni {
 		return lista;
 
 	}
-	/*
-	* Restituisce lista con condizioni per non ricevere le parole contenenti le lettere di colore grigio
+	/**
+	* Restituisce lista con le condizione per generare la query che selezionerà le parole non contenenti le lettere di colore grigio
+	* @param tentativo dal quale generare le condizioni
 	* */
 	public static List<String> condizioneGrigi(Tentativo tentativo) {
 

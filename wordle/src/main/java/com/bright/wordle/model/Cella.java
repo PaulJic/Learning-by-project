@@ -1,5 +1,8 @@
 package com.bright.wordle.model;
-
+/**
+ * Rappresenta la singola cella caratterizzata dal valore della lettera 
+ * e dal suo colore
+ * */
 public class Cella {
 
 	private char lettera;
